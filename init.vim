@@ -28,12 +28,14 @@ Plug 'liuchengxu/vista.vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
+
 "------------------Config for Plugin Nerdtree--------------
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | wincmd p
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 "---------------------------------------------------------
 
+"-----------------------------------------------------------
 
 "-----------------Config for Plugin Lightline--------------
 let g:lightline = {
@@ -91,6 +93,7 @@ set smartindent
 "------------------------------------------------------------
 "------------------------KEY MAP-----------------------------
 nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
+inoremap jj <Esc>
 "------------------------------------------------------------
 
 "---------------------Some custom style----------------------
