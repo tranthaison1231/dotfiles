@@ -34,9 +34,7 @@ let g:NERDTreeIndicatorMapCustom = {
         \ 'Ignored'   : '☒',
         \ "Unknown"   : "?"
     \ }
-set guifont=DroidSansMono_Nerd_Font:h11
 "---------------------------------------------------------
-
 "----------------Config for Plugin Vim easyescape------------
 let g:easyescape_chars = { "j": 2 }
 let g:easyescape_timeout = 100
@@ -49,6 +47,16 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 "-----------------------------------------------------------
+
+"---------------Config for ctrlpvim/ctrlp.vim ---------------
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] "Hide files in .gitignore
+let g:ctrlp_show_hidden = 1                                                         "Show dotfiles
+"-------------------Config for nerdcommenter----------------
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+
 
 
 "-----------------------------------------------------------
@@ -80,6 +88,9 @@ set noswapfile
 set foldlevelstart=1
 set nojoinspaces
 set nowrap
+set nowritebackup
+set noswapfile
+set nobackup
 set number
 set relativenumber
 set laststatus=2
@@ -120,6 +131,10 @@ set expandtab
 set autoindent
 set smartindent
 "------------------------------------------------------------
+
+"" Turn-on dracula color scheme
+syntax on
+color dracula
 
 
 "------------------------------------------------------------
