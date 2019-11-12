@@ -1,14 +1,21 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-rooter'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy find file
 Plug 'dracula/vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'itchyny/lightline.vim'
 Plug 'zhou13/vim-easyescape'
 Plug 'SirVer/ultisnips'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mattn/emmet-vim'
+Plug 'morhetz/gruvbox'
+Plug 'mxw/vim-jsx'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'huytd/vim-quickrun'
 Plug 'honza/vim-snippets'
 Plug 'sheerun/vim-polyglot'
@@ -23,13 +30,12 @@ Plug 'Shougo/denite.nvim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'tomasr/molokai'
-Plug 'airblade/vim-rooter'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vwxyutarooo/nerdtree-devicons-syntax'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'tpope/vim-surround'
 Plug 'Xuyuanp/nerdtree-git-plugin'  " display git status within Nerdtree:
 Plug 'jiangmiao/auto-pairs'
@@ -38,27 +44,7 @@ Plug 'tpope/vim-abolish'
 Plug 'liuchengxu/vista.vim'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'graphql',
-    \ 'markdown',
-    \ 'vue',
-    \ 'lua',
-    \ 'php',
-    \ 'python',
-    \ 'ruby',
-    \ 'html',
-    \ 'swift' ] }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'mxw/vim-jsx'
 call plug#end()
 
 if has('nvim')
