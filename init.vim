@@ -5,6 +5,7 @@ source ~/.config/nvim/config/keys.vim
 let mapleader=";"
 nmap <c-p> <Plug>MarkdownPreview
 map caa <esc>ggVG<CR>
+imap css <esc>:w<CR>
 map css <esc>:w<CR>
 inoremap ;; <Esc>
 "-----------------Config for Nerdtree---------------------
@@ -74,6 +75,14 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+"----------------------Buffer nav--------------------
+noremap <leader>z :bp<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
