@@ -4,10 +4,33 @@ source ~/.config/nvim/config/keys.vim
 : "------------------------Config for mapkey -----------------
 let mapleader=";"
 nmap <c-p> <Plug>MarkdownPreview
-map caa <esc>ggVG<CR>
-imap css <esc>:w<CR>
-map css <esc>:w<CR>
+map caaaa <esc>ggVG<CR>
+imap caaaa <esc>ggVG<CR>
+imap cssss <esc>:w<CR>
+map cssss <esc>:w<CR>
+imap cqqqq <esc>:q<CR>
+map cqqqq <esc>:q<CR>
+map cqqqqssss <esc>:call OpenFloatTerm()<CR>
+imap cqqqqssss <esc>:call OpenFloatTerm()<CR>
 inoremap ;; <Esc>
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+" Move window
+nmap <Space> <C-w>w
+map s<left> <C-w>f
+map s<up> <C-w>k
+map s<down> <C-w>j
+map s<right> <C-w>l
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+" Resize window
+nmap <C-w><left> <C-w><
+nmap <C-w><right> <C-w>>
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
 "-----------------Config for Nerdtree---------------------
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
@@ -22,7 +45,14 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 command!  -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)----------------
-"-------------------Config for show coc---------------------
+"-------------------Config for coc coc---------------------
+nnoremap <C-o> :CocList outline<CR>
+" Create mappings for function text object, requires
+" document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
@@ -68,6 +98,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+"------------Config function in neovim--------------
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -76,6 +108,38 @@ function! s:show_documentation()
   endif
 endfunction
 
+function! OpenFloatTerm()
+  let height = float2nr((&lines - 2) / 1.5)
+  let row = float2nr((&lines - height) / 2)
+  let width = float2nr(&columns / 1.5)
+  let col = float2nr((&columns - width) / 2)
+  " Border Window
+  let border_opts = {
+    \ 'relative': 'editor',
+    \ 'row': row - 1,
+    \ 'col': col - 2,
+    \ 'width': width + 4,
+    \ 'height': height + 2,
+    \ 'style': 'minimal'
+    \ }
+  let border_buf = nvim_create_buf(v:false, v:true)
+  let s:border_win = nvim_open_win(border_buf, v:true, border_opts)
+  " Main Window
+  let opts = {
+    \ 'relative': 'editor',
+    \ 'row': row,
+    \ 'col': col,
+    \ 'width': width,
+    \ 'height': height,
+    \ 'style': 'minimal'
+    \ }
+  let buf = nvim_create_buf(v:false, v:true)
+  let win = nvim_open_win(buf, v:true, opts)
+  terminal
+  startinsert
+  " Hook up TermClose event to close both terminal and border windows
+  autocmd TermClose * ++once :q | call nvim_win_close(s:border_win, v:true)
+endfunction
 "----------------------Buffer nav--------------------
 noremap <leader>z :bp<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
@@ -103,6 +167,9 @@ highlight WildMenu guibg=NONE guifg=#87bb7c
 highlight CursorLineNr guibg=NONE
 "------------------------------------------------------------
 "----------------------------------------------------------
+"------------------Config for vim-airline-----------------
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 "------------------Config for Plugin deoplete--------------
 let g:deoplete#enable_at_startup = 1
 "----------------------------------------------------------
@@ -121,7 +188,10 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGitStatusWithFlags = 1
-let NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+let g:NERDTreeStatusline = ''
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeIndicatorMapCustom = { 
@@ -141,7 +211,11 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
+  \ 'coc-css',
   \ 'coc-tsserver',
+  \ 'coc-tslint',
+  \ 'coc-tslint-plugin',
+  \ 'coc-emmet',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
@@ -230,6 +304,8 @@ set showcmd
 set softtabstop=2
 set shiftwidth=2
 set shiftround
+set smartindent
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 " " don't give |ins-completion-menu| messages.
 set shortmess+=c
 " always show signcolumns
@@ -240,7 +316,6 @@ set updatetime=300
 set visualbell 
 set expandtab
 set autoindent
-set smartindent
 "------------------------------------------------------------
 
 "" Turn-on dracula color scheme

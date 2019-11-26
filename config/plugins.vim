@@ -19,9 +19,9 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'huytd/vim-quickrun'
 Plug 'honza/vim-snippets'
 Plug 'sheerun/vim-polyglot'
-Plug 'rust-lang/rust.vim'
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
+" When use coc.nvim don't use deoplete and Youcompleme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-denite'
 Plug 'scrooloose/nerdtree'
@@ -44,8 +44,18 @@ Plug 'tpope/vim-abolish'
 Plug 'liuchengxu/vista.vim'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
+Plug 'psliwka/vim-smoothie'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"----------------Vim for airline-------------
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+"----------------Plugin Flutter
+Plug 'thosakwe/vim-flutter'
+Plug 'dart-lang/dart-vim-plugin'
+"
+
 call plug#end()
+
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

@@ -2,11 +2,14 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/shyn/.oh-my-zsh"
+export PATH="$PATH:/Users/shyn/flutter/bin"
+export NVM_DIR="/Users/shyn/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-ln -s ~/.config/nvim/.zshrc ~/.zshrc
+ln -fs ~/.config/nvim/.zshrc ~/.zshrc
+# ln -sf "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
-
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 plugins=(
   iterm2
@@ -77,6 +80,7 @@ alias git_edit="ga . && gcmsg 'Fix something' && ggpush"
 alias git_init="ga . && gcmsg 'Init project' && ggpush"
 alias gi="git init"
 alias gl='git log --graph --oneline --all --decorate'
+alias gbr="git branch | grep -v "master" | xargs git branch -D"
 alias yl="yarn lint"
 alias gcl="git clone"
 alias zshrc="nvim ~/.zshrc"
@@ -95,11 +99,31 @@ alias openPorts='sudo lsof -i | grep LISTEN'                    # openPorts:    
 alias showBlocked='sudo ipfw list'                              # showBlocked:      All ipfw rules inc/ blocked IPs
 alias gv='git version'                              # showBlocked:      All ipfw rules inc/ blocked IPs
 alias clr="clear"
-
 alias ip4="ip -4"
 alias ip6="ip -6"
+#----------For home brew---------------------------
+alias bsl='brew services list'
+# ---------For POSTGRES SQL DATABASE----------------
+alias pg-start='pg_ctl -D /usr/local/var/postgres start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+# alias pg-restart=''
+# ---------For MY SQL-------------------------------
+alias ms-start='sudo /usr/local/mysql/support-files/mysql.server start'
+alias ms-stop='sudo /usr/local/mysql/support-files/mysql.server stop'
+alias ms-restart='sudo /usr/local/mysql/support-files/mysql.server restart'
+# ---------For MONGODB------------------------------
+# alias pg-start='pg_ctl -D /usr/local/var/postgres start'
+# alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 #	---------------------------------------
+# Generate a self-signed certificate: https://timonweb.com/posts/running-expressjs-server-over-https/
+alias gn-server-key='openssl req -nodes -new -x509 -keyout server.key -out server.cert' 
+
+# --------Block web------------
+# https://www.laptopmag.com/articles/block-websites-mac
+alias block_web='sudo nvim /etc/hosts'
+alias save_block_web='sudo dscacheutil -flushcache'
+
 
 gpush () {
   ga . && gcmsg $1 && ggpush;
@@ -113,7 +137,42 @@ gpush--amend (){
   ga . && git commit --amend $1 && ggpush -f; 
 }
 
-export NVM_DIR="/Users/shyn/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#---------Config for Spaceship Prompt---------
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  hg            # Mercurial section (hg_branch  + hg_status)
+  package       # Package version
+  node          # Node.js section
+  ruby          # Ruby section
+  elixir        # Elixir section
+  xcode         # Xcode section
+  swift         # Swift section
+  golang        # Go section
+  php           # PHP section
+  rust          # Rust section
+  haskell       # Haskell Stack section
+  julia         # Julia section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  dotnet        # .NET section
+  ember         # Ember.js section
+  kubecontext   # Kubectl context section
+  terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
 
-export PATH="$PATH:/Users/shyn/flutter/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
