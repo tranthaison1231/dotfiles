@@ -32,6 +32,7 @@ plugins=(
   npm
   brew
   osx
+  nvm
   dotenv
   colorize
 )
@@ -57,9 +58,12 @@ alias messenger="open -a 'Google Chrome'https://www.messenger.com/ "
 alias trello="open -a 'Google Chrome' http://www.trello.com "
 alias skype="open -a 'Google Chrome' https://web.skype.com/ "
 alias google="open -a 'Google Chrome' https://www.google.com/ "
+alias twitter="open -a 'Google Chrome' https://twitter.com/home"
+alias discord="open -a 'Google Chrome' https://discordapp.com/channels/@me"
 alias gitlab="open -a 'Google Chrome' https://gitlab.com/dashboard/projects "
 alias github="open -a 'Google Chrome' https://github.com/tranthaison1231?tab=repositories "
-alias github_setting="open -a 'Google Chrome' https://github.com/tranthaison1231/SETTING_MACOS_ENV "
+alias shyn="open -a 'Google Chrome' https://github.com/tranthaison1231/SETTING_MACOS_ENV "
+alias gmail"open -a 'Google Chrome' https://mail.google.com/mail/u/0/?tab=wm&ogbl"
 alias figma="open -a 'Google Chrome' https://www.figma.com/files/recent "
 alias zeplin="open -a 'Google Chrome' https://app.zeplin.io/projects "
 alias postman="open -a 'Google Chrome' https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en "
@@ -81,14 +85,42 @@ alias git_init="ga . && gcmsg 'Init project' && ggpush"
 alias gi="git init"
 alias gl='git log --graph --oneline --all --decorate'
 alias gbr="git branch | grep -v "master" | xargs git branch -D"
-alias yl="yarn lint"
 alias gcl="git clone"
+alias gc="git commit -m"
+alias gnah="!git reset --hard && git clean -df"
+alias gamend="git add . && git commit --amend --no-edit"
+alias gu="git pull --rebase"
+alias gms="git merge --squash"
+alias nis="npm install --save "
+
+
+git-standup() {
+    AUTHOR=${AUTHOR:="`git config user.name`"}
+
+    since=yesterday
+    if [[ $(date +%u) == 1 ]] ; then
+        since="2 days ago"
+    fi
+
+    git log --all --since "$since" --oneline --author="$AUTHOR"
+}
+
+#---------------Config for neovim-----------------------
 alias zshrc="nvim ~/.zshrc"
 alias nvim_init="nvim ~/.config/nvim/init.vim"
 alias vim=nvim
 alias tmux="tmux -u"
-#		NETWORKING
-#	---------------------------------------
+#---------------DOCKER----------------------------------
+alias d="docker"
+alias dimg="docker images"
+alias dpull="docker pull"
+alias dps="docker ps"
+alias dc="docker-compose"
+alias dr="docker run"
+#---------------Flutter---------------------------------
+alias fld="flutter doctor"https://nehttps://nestjs-now.thaisoncoderstokyo.now.shstjs-now.thaisoncoderstokyo.now.sh
+
+#---------------NETWORKING------------------------------
 alias myip='curl -4 icanhazip.com; curl -6 icanhazip.com'       # myip:             Public facing IP Address
 alias netCons='lsof -i'                                         # netCons:          Show all open TCP/IP sockets
 alias flushDNS='sudo killall -HUP mDNSResponder'                # flushDNS:         Flush out the DNS Cache
@@ -98,11 +130,16 @@ alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'               # lsockT:       
 alias openPorts='sudo lsof -i | grep LISTEN'                    # openPorts:        All listening connections
 alias showBlocked='sudo ipfw list'                              # showBlocked:      All ipfw rules inc/ blocked IPs
 alias gv='git version'                              # showBlocked:      All ipfw rules inc/ blocked IPs
-alias clr="clear"
+alias cl="clear"
 alias ip4="ip -4"
 alias ip6="ip -6"
+#---------For yarn--------------------------------
+alias yri='rm -rf node_modules && rm -rf yarn.lock && yarn cache clean && yarn'
+alias yl="yarn lint"
 #----------For home brew---------------------------
 alias bsl='brew services list'
+alias bi='brew install'
+alias br='brew remove'
 # ---------For POSTGRES SQL DATABASE----------------
 alias pg-start='pg_ctl -D /usr/local/var/postgres start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
@@ -123,6 +160,34 @@ alias gn-server-key='openssl req -nodes -new -x509 -keyout server.key -out serve
 # https://www.laptopmag.com/articles/block-websites-mac
 alias block_web='sudo nvim /etc/hosts'
 alias save_block_web='sudo dscacheutil -flushcache'
+#---------Tmux
+alias tmuxa="tmux attach -t"
+alias tmuxn="tmux new -s"
+alias tmuxk="tmux kill -t"
+alias tmuxl="tmux ls"
+
+#--------------Lerna----------------------
+alias lp="lerna publish"
+alias lv="lerna version"
+alias lb="lerna bootstrap"
+alias ll="lerna list"
+alias lcg="lerna changed"
+alias ld="lerna diff"
+alias le="lerna exec"
+alias lr="lerna run"
+alias li="lerna init"
+alias la="lerna add"
+alias lcl="lerna clean"
+alias l="lerna"
+alias lim="lerna import"
+
+function clean-containers() {
+    docker rm $(docker ps -a -q)
+}
+
+function clean-images() {
+    docker rmi $(docker images -q)
+}
 
 
 gpush () {

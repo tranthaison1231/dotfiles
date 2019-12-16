@@ -3,7 +3,7 @@ source ~/.config/nvim/config/keys.vim
 
 : "------------------------Config for mapkey -----------------
 let mapleader=";"
-nmap <c-p> <Plug>MarkdownPreview
+" nmap <c-p> <Plug>MarkdownPreview
 map caaaa <esc>ggVG<CR>
 imap caaaa <esc>ggVG<CR>
 imap cssss <esc>:w<CR>
@@ -13,9 +13,14 @@ map cqqqq <esc>:q<CR>
 map cqqqqssss <esc>:call OpenFloatTerm()<CR>
 imap cqqqqssss <esc>:call OpenFloatTerm()<CR>
 inoremap ;; <Esc>
+nmap <leader>y :History:<CR>
+nmap <Leader>d <Plug>(Scalpel)
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
+" Mange buffer in neovim 
+nmap <silent> <Tab> :bn<CR>
+nmap <silent> <S-Tab> :bp<CR>
 " Move window
 nmap <Space> <C-w>w
 map s<left> <C-w>f
@@ -155,6 +160,12 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 "------------------------------------------------------------
+"Vim Tmux
+map <leader>vp :VimuxPromptCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+map <leader>vz :VimuxZoomRunner<CR>
+map <leader>vi :VimuxInspectRunner<CR>
+map <leader>vc :VimuxInterruptRunner<CR>
 "---------------------Some custom style----------------------
 highlight Normal guibg=NONE
 highlight EasyMotionTargetDefault guifg=#ffb400
@@ -173,6 +184,22 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "------------------Config for Plugin deoplete--------------
 let g:deoplete#enable_at_startup = 1
 "----------------------------------------------------------
+"------------------FZF.vim------------------------
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+" The Silver Searcher
+if executable('ag')
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
 
 
 "------------------Config for Plugin Vim devicons----------
@@ -228,9 +255,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 "-----------------------------------------------------------
 
-"---------------Config for ctrlpvim/ctrlp.vim ---------------
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] "Hide files in .gitignore
-let g:ctrlp_show_hidden = 1                                                         "Show dotfiles
 "-------------------Config for nerdcommenter----------------
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1

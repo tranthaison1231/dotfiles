@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-rooter'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim' " Fuzzy find file
+" Plug 'ctrlpvim/ctrlp.vim' " Fuzzy find file
 Plug 'dracula/vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -31,6 +31,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'tomasr/molokai'
 Plug 'easymotion/vim-easymotion'
@@ -40,12 +41,18 @@ Plug 'tpope/vim-surround'
 Plug 'Xuyuanp/nerdtree-git-plugin'  " display git status within Nerdtree:
 Plug 'jiangmiao/auto-pairs'
 Plug 'haya14busa/incsearch.vim'
-Plug 'tpope/vim-abolish' 
 Plug 'liuchengxu/vista.vim'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'psliwka/vim-smoothie'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'troydm/zoomwintab.vim'
+Plug 'tpope/vim-abolish' 
+"----------------For tmux-------------------
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux' "Vi + Tmux
+"----------------For search-----------------
+Plug 'wincent/scalpel'
 "----------------Vim for airline-------------
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
