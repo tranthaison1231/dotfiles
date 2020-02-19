@@ -39,9 +39,31 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-#	MAKE TERMINAL BETTER
-#	-----------------------------------------
 
+# Add android PATH ( React Native and Flutter )
+export PATH="$PATH:/Users/shyn/flutter/bin" # Config for flutter
+export LC_ALL=en_US.UTF-8
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_HOME=/Applications/ADT/sdk
+export PATH=~/Library/Android/sdk/tools:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export PSQL_DIR=/usr/local/pgsql/bin/
+export PATH="$PSQL_DIR:$PATH"
+
+
+# Add Go Development 
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+
+
+# Make Terminal better
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
 alias mv="mv -iv"                                               # Preferred 'mv' implentation
 alias mkdir="mkdir -pv"                                         # Preferred 'mkdir' implentation
@@ -51,8 +73,10 @@ alias .4='cd ../../../../'                                      # Go back 4 dire
 alias .5='cd ../../../../../'                                   # Go back 5 directory levels
 alias .6='cd ../../../../../../'                                # Go back 6 directory levels
 alias path='echo -e ${PATH//:/\\n}'                             # path:         Echo all executable Paths
+alias ls='exa -al --color=always --group-directories-first'
 
-alias youtube="open -a 'Google Chrome' http://www.youtube.com "
+alias utube="open -a 'Google Chrome' http://www.youtube.com "
+alias pipcorn="npx pipcorn"
 alias facebook="open -a 'Google Chrome' http://www.facebook.com "
 alias messenger="open -a 'Google Chrome'https://www.messenger.com/ "
 alias trello="open -a 'Google Chrome' http://www.trello.com "
@@ -79,6 +103,11 @@ alias calendar="open -a 'Calendar' "
 alias translate="open -a 'Google Chrome' https://www.google.com/search?q=translate "
 alias xd="open -a 'Adobe XD' "
 alias trash="rm -rf ~/.Trash/*"
+alias x="exit"
+alias sb="source ~/.bash_profile"
+alias hc="history -c"
+alias setting="cd ~/DEV/SETTING_MACOS_ENV"
+alias nis="npm install --save "
 #---------------GITHUB---------------------------------
 alias git_edit="ga . && gcmsg 'Fix something' && ggpush"
 alias git_init="ga . && gcmsg 'Init project' && ggpush"
@@ -90,8 +119,35 @@ alias gc="git commit -m"
 alias gnah="!git reset --hard && git clean -df"
 alias gamend="git add . && git commit --amend --no-edit"
 alias gu="git pull --rebase"
+alias gum="git pull origin master --rebase"
+alias gmc="git merge --continue"
+alias gus="git pull origin staging --rebase"
+alias gud="git pull origin develop --rebase"
+alias gur="git pull origin release --rebase"
 alias gms="git merge --squash"
-alias nis="npm install --save "
+alias grs="git reset"
+
+
+# kubernetes shortcut
+alias k='kubectl'
+alias kk='kubectl get all'
+alias wk='watch kubectl get all'
+alias kga='kubectl get --all-namespaces'
+alias kg='kubectl get'
+alias kc='kubectl create -f'
+alias ka='kubectl apply -f'
+alias kdel='kubectl delete -f'
+alias kcdel='kubectl delete configmap'
+alias kd='kubectl describe'
+alias kl='kubectl logs'
+alias ke='kubectl exec -it'
+alias kcontext='kubectl config set-context $(kubectl config current-context)' # add --namespace=<ns>
+alias kdelete='kubectl delete --grace-period=0 --force po'
+alias kwp='watch kubectl get pod -owide'
+kct () { kubectl config use-context $1 }
+kns () { kubectl config set-context $(kubectl config current-context) --namespace=$1 }
+kdevict() { kubectl get pods | grep Evicted | awk '{print $1}' | xargs kubectl delete pod }
+
 
 
 git-standup() {
@@ -104,7 +160,8 @@ git-standup() {
 
     git log --all --since "$since" --oneline --author="$AUTHOR"
 }
-
+#---------------Confif for nmp--------------------------
+alias npmr="npm run"
 #---------------Config for neovim-----------------------
 alias zshrc="nvim ~/.zshrc"
 alias nvim_init="nvim ~/.config/nvim/init.vim"
@@ -112,11 +169,14 @@ alias vim=nvim
 alias tmux="tmux -u"
 #---------------DOCKER----------------------------------
 alias d="docker"
-alias dimg="docker images"
+alias dimg="docker image"
+alias dimgs="docker images"
 alias dpull="docker pull"
 alias dps="docker ps"
 alias dc="docker-compose"
 alias dr="docker run"
+alias drmif="docker rmi -f"
+alias db="docker build"
 #---------------Flutter---------------------------------
 alias fld="flutter doctor"https://nehttps://nestjs-now.thaisoncoderstokyo.now.shstjs-now.thaisoncoderstokyo.now.sh
 
