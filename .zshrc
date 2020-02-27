@@ -1,4 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Path for your nvim
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/shyn/.oh-my-zsh"
