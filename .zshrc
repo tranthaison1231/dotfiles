@@ -4,9 +4,8 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
-source ~/.oh-my-zsh/oh-my-zsh.sh
-export PATH="$PATH:~/flutter/bin"
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:$HOME/flutter/bin"
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -41,11 +40,11 @@ plugins=(
   colorize
 )
 
-
+source $ZSH/oh-my-zsh.sh
 
 
 # Add android PATH ( React Native and Flutter )
-export PATH="$PATH:~/flutter/bin" # Config for flutter
+export PATH="$PATH:$HOME/flutter/bin" # Config for flutter
 export LC_ALL=en_US.UTF-8
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -91,7 +90,7 @@ alias discord="open -a 'Google Chrome' https://discordapp.com/channels/@me"
 alias gitlab="open -a 'Google Chrome' https://gitlab.com/dashboard/projects "
 alias github="open -a 'Google Chrome' https://github.com/tranthaison1231?tab=repositories "
 alias shyn="open -a 'Google Chrome' https://github.com/tranthaison1231/SETTING_MACOS_ENV "
-alias gmail"open -a 'Google Chrome' https://mail.google.com/mail/u/0/?tab=wm&ogbl"
+alias gmail="open -a 'Google Chrome' https://mail.google.com/mail/u/0/?tab=wm&ogbl"
 alias figma="open -a 'Google Chrome' https://www.figma.com/files/recent "
 alias zeplin="open -a 'Google Chrome' https://app.zeplin.io/projects "
 alias postman="open -a 'Google Chrome' https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en "
