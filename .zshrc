@@ -4,9 +4,10 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/shyn/.oh-my-zsh"
-export PATH="$PATH:/Users/shyn/flutter/bin"
-export NVM_DIR="/Users/shyn/.nvm"
+export ZSH="~/.oh-my-zsh"
+source ~/.oh-my-zsh/oh-my-zsh.sh
+export PATH="$PATH:~/flutter/bin"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 ln -fs ~/.config/nvim/.zshrc ~/.zshrc
@@ -40,11 +41,11 @@ plugins=(
   colorize
 )
 
-source $ZSH/oh-my-zsh.sh
+
 
 
 # Add android PATH ( React Native and Flutter )
-export PATH="$PATH:/Users/shyn/flutter/bin" # Config for flutter
+export PATH="$PATH:~/flutter/bin" # Config for flutter
 export LC_ALL=en_US.UTF-8
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
