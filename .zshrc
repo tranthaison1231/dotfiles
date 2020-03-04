@@ -1,7 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path for your nvim
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -168,10 +167,11 @@ alias npmr="npm run"
 #---------------Config for neovim-----------------------
 alias zshrc="nvim ~/.zshrc"
 alias nvim_init="nvim ~/.config/nvim/init.vim"
-alias vim=nvim
+alias v=nvim
 alias tmux="tmux -u"
 #---------------DOCKER----------------------------------
 alias d="docker"
+alias dopen="open --background -a Docker"
 alias dimg="docker image"
 alias dimgs="docker images"
 alias dpull="docker pull"
