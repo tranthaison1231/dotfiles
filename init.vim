@@ -60,6 +60,7 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Remap key for goto 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -113,6 +114,8 @@ function! s:show_documentation()
   endif
 endfunction
 
+
+"-------------------- Open more window by cmd + o-------------- 
 function! OpenFloatTerm()
   let height = float2nr((&lines - 2) / 1.5)
   let row = float2nr((&lines - height) / 2)
