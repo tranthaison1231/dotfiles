@@ -1,4 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+
 # Path for your nvim
 export NVM_DIR=~/.nvm
 
@@ -10,16 +13,15 @@ export PATH="$PATH:$HOME/flutter/bin"
 ln -fs ~/.config/nvim/.zshrc ~/.zshrc
 # ln -sf "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+
+
 ZSH_THEME="spaceship"
 
 plugins=(
   iterm2
   git
   vi-mode
-  bundler
   command-not-found
-  copydir
-  copyfile
   dotenv
   docker-compose
   osx
@@ -68,47 +70,20 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
 alias mv="mv -iv"                                               # Preferred 'mv' implentation
 alias mkdir="mkdir -pv"                                         # Preferred 'mkdir' implentation
-alias s="source"
+alias src="source"
 alias ...='cd ../../'                                           # Go back 2 directory levels
 alias .3='cd ../../../'                                         # Go back 3 directory levels
 alias .4='cd ../../../../'                                      # Go back 4 directory levels
 alias .5='cd ../../../../../'                                   # Go back 5 directory levels
 alias .6='cd ../../../../../../'                                # Go back 6 directory levels
 alias path='echo -e ${PATH//:/\\n}'                             # path:         Echo all executable Paths
-alias ls='exa -al --color=always --group-directories-first'
+alias ls='colorls'
 
-alias utube="open -a 'Google Chrome' http://www.youtube.com "
 alias pipcorn="npx pipcorn"
-alias facebook="open -a 'Google Chrome' http://www.facebook.com "
-alias messenger="open -a 'Google Chrome'https://www.messenger.com/ "
-alias trello="open -a 'Google Chrome' http://www.trello.com "
-alias skype="open -a 'Google Chrome' https://web.skype.com/ "
-alias google="open -a 'Google Chrome' https://www.google.com/ "
-alias twitter="open -a 'Google Chrome' https://twitter.com/home"
-alias discord="open -a 'Google Chrome' https://discordapp.com/channels/@me"
-alias gitlab="open -a 'Google Chrome' https://gitlab.com/dashboard/projects "
-alias github="open -a 'Google Chrome' https://github.com/tranthaison1231?tab=repositories "
-alias shyn="open -a 'Google Chrome' https://github.com/tranthaison1231/SETTING_MACOS_ENV "
-alias gmail="open -a 'Google Chrome' https://mail.google.com/mail/u/0/?tab=wm&ogbl"
-alias figma="open -a 'Google Chrome' https://www.figma.com/files/recent "
-alias zeplin="open -a 'Google Chrome' https://app.zeplin.io/projects "
-alias postman="open -a 'Google Chrome' https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en "
-alias photoshop="open -a 'Adobe Photoshop CC 2019' "
-alias reddit="open -a 'Google Chrome' https://www.reddit.com "
-alias medium="open -a 'Google Chrome' https://medium.com/ "
-alias instagram="open -a 'Google Chrome' https://www.instagram.com/ "
-alias codepen="open -a 'Google Chrome' https://codepen.io/dashboard/ "
-alias codesandbox="open -a 'Google Chrome' https://codesandbox.io/dashboard/recent "
-alias netflix="open -a 'Google Chrome' https://www.netflix.com/browse "
-alias macvim="open -a 'macvim' "
-alias calendar="open -a 'Calendar' "
-alias translate="open -a 'Google Chrome' https://www.google.com/search?q=translate "
-alias xd="open -a 'Adobe XD' "
 alias trash="rm -rf ~/.Trash/*"
 alias x="exit"
 alias sb="source ~/.bash_profile"
 alias hc="history -c"
-alias setting="cd ~/DEV/SETTING_MACOS_ENV"
 alias nis="npm install --save "
 #---------------GITHUB---------------------------------
 alias git_edit="ga . && gcmsg 'Fix something' && ggpush"
@@ -272,22 +247,18 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
   package       # Package version
   node          # Node.js section
   ruby          # Ruby section
   elixir        # Elixir section
   xcode         # Xcode section
-  swift         # Swift section
   golang        # Go section
-  php           # PHP section
   rust          # Rust section
   haskell       # Haskell Stack section
   julia         # Julia section
   docker        # Docker section
   aws           # Amazon Web Services section
   venv          # virtualenv section
-  conda         # conda virtualenv section
   pyenv         # Pyenv section
   dotnet        # .NET section
   ember         # Ember.js section
