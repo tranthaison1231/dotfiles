@@ -3,27 +3,14 @@ source ~/.config/nvim/config/keys.vim
 
 : "------------------------Config for mapkey -----------------
 let mapleader=";"
-" nmap <c-p> <Plug>MarkdownPreview
-map caaaa <esc>ggVG<CR>
-imap caaaa <esc>ggVG<CR>
-imap cssss <esc>:w<CR>
-map cssss <esc>:w<CR>
-imap cqqqq <esc>:q<CR>
-map cqqqq <esc>:q<CR>
-map cqqqqssss <esc>:call OpenFloatTerm()<CR>
-imap cqqqqssss <esc>:call OpenFloatTerm()<CR>
 inoremap ;; <Esc>
-nmap <leader>y :History:<CR>
 nmap <Leader>d <Plug>(Scalpel)
-" Split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
+"Split window
+map sv :vsplit<Return><C-w>w
 " Mange buffer in neovim 
-nmap <silent> <Tab> :bn<CR>
-nmap <silent> <S-Tab> :bp<CR>
 " Move window
 nmap <Space> <C-w>w
-map s<left> <C-w>f
+nmap s<left> <C-w>f
 map s<up> <C-w>k
 map s<down> <C-w>j
 map s<right> <C-w>l
@@ -37,30 +24,13 @@ nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 "-----------------Config for Nerdtree---------------------
-vmap ++ <plug>NERDCommenterToggle
+vmap ++ <plug>NERDCommenterTogglel
 nmap ++ <plug>NERDCommenterToggle
 nmap <leader>nf :NERDTreeFind<CR>
-" toggle tagbar
-nnoremap <silent> <leader>tb :TagbarToggle<CR>
-"------------------Config for ctrlsf.vim-------------------
-nmap     <C-F>f <Plug>CtrlSFPrompt                  
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
 "-----------------Config for coc-prettier-------------------
 command!  -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)----------------
 "-------------------Config for coc coc---------------------
-nnoremap <C-o> :CocList outline<CR>
-" Create mappings for function text object, requires
 " document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" Remap key for goto 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -149,11 +119,7 @@ function! OpenFloatTerm()
   autocmd TermClose * ++once :q | call nvim_win_close(s:border_win, v:true)
 endfunction
 "----------------------Buffer nav--------------------
-noremap <leader>z :bp<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
 
 augroup mygroup
   autocmd!
