@@ -68,6 +68,7 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
 alias mv="mv -iv"                                               # Preferred 'mv' implentation
 alias mkdir="mkdir -pv"                                         # Preferred 'mkdir' implentation
+alias s="source"
 alias ...='cd ../../'                                           # Go back 2 directory levels
 alias .3='cd ../../../'                                         # Go back 3 directory levels
 alias .4='cd ../../../../'                                      # Go back 4 directory levels
