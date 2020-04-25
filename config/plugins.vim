@@ -47,10 +47,10 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'liuchengxu/vista.vim'
 " Plug 'psliwka/vim-smoothie'
 "----------------For tmux-------------------
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux' "Vi + Tmux
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'benmills/vimux' "Vi + Tmux
 "----------------Vim for airline-------------
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 "----------------Plugin Flutter-------------
 Plug 'thosakwe/vim-flutter'
