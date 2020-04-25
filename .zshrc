@@ -18,26 +18,11 @@ ln -fs ~/.config/nvim/.zshrc ~/.zshrc
 ZSH_THEME="spaceship"
 
 plugins=(
-  iterm2
   git
-  vi-mode
-  command-not-found
-  dotenv
-  docker-compose
-  osx
-  common-aliases  
   zsh-autosuggestions
   zsh-syntax-highlighting
-  colored-man-pages
-  colorize
   zsh-completions
-  yarn
-  npm
   brew
-  osx
-  nvm
-  dotenv
-  colorize
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -204,20 +189,6 @@ alias tmuxn="tmux new -s"
 alias tmuxk="tmux kill -t"
 alias tmuxl="tmux ls"
 
-#--------------Lerna----------------------
-alias lp="lerna publish"
-alias lv="lerna version"
-alias lb="lerna bootstrap"
-alias ll="lerna list"
-alias lcg="lerna changed"
-alias ld="lerna diff"
-alias le="lerna exec"
-alias lr="lerna run"
-alias li="lerna init"
-alias la="lerna add"
-alias lcl="lerna clean"
-alias l="lerna"
-alias lim="lerna import"
 
 function clean-containers() {
     docker rm $(docker ps -a -q)
@@ -227,18 +198,10 @@ function clean-images() {
     docker rmi $(docker images -q)
 }
 
-
-gpush () {
-  ga . && gcmsg $1 && ggpush;
-}
-
 gpull () {
   git pull $1 $2;
 }
 
-gpush--amend (){
-  ga . && git commit --amend $1 && ggpush -f; 
-}
 
 #---------Config for Spaceship Prompt---------
 SPACESHIP_PROMPT_ORDER=(

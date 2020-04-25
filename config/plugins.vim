@@ -1,7 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 " Plug 'airblade/vim-rooter'
 Plug 'dracula/vim'
-Plug 'dyng/ctrlsf.vim'
+" Plug 'dyng/ctrlsf.vim'
 " Plug 'itchyny/lightline.vim'
 Plug 'zhou13/vim-easyescape'
 " Plug 'SirVer/ultisnips'
@@ -52,7 +52,7 @@ Plug 'benmills/vimux' "Vi + Tmux
 "----------------Vim for airline-------------
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-"----------------Plugin Flutter
+"----------------Plugin Flutter-------------
 Plug 'thosakwe/vim-flutter'
 Plug 'dart-lang/dart-vim-plugin'
 "
