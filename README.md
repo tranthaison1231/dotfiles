@@ -6,3 +6,7 @@ There are two step to use this config:
 ```
 $ rm -rf ~/config/nvim && git clone https://github.com/tranthaison1231/Dotfiles ~/.config/nvim/
 ```
+
+
+**Orther dotfiles**:
+- https://github.com/codeaholicguy/dotfiles
