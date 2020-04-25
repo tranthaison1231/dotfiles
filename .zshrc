@@ -64,79 +64,10 @@ alias trash="rm -rf ~/.Trash/*"
 alias x="exit"
 alias sb="source ~/.bash_profile"
 alias hc="history -c"
-alias nis="npm install --save "
-#---------------GITHUB---------------------------------
-alias git_edit="ga . && gcmsg 'Fix something' && ggpush"
-alias git_init="ga . && gcmsg 'Init project' && ggpush"
-alias gi="git init"
-alias gl='git log --graph --oneline --all --decorate'
-alias gbr="git branch | grep -v "master" | xargs git branch -D"
-alias gcl="git clone"
-alias gc="git commit -m"
-alias gnah="!git reset --hard && git clean -df"
-alias gamend="git add . && git commit --amend --no-edit"
-alias gu="git pull --rebase"
-alias gum="git pull origin master --rebase"
-alias gmc="git merge --continue"
-alias gus="git pull origin staging --rebase"
-alias gud="git pull origin develop --rebase"
-alias gur="git pull origin release --rebase"
-alias gms="git merge --squash"
-alias grs="git reset"
-
-
-# kubernetes shortcut
-alias k='kubectl'
-alias kk='kubectl get all'
-alias wk='watch kubectl get all'
-alias kga='kubectl get --all-namespaces'
-alias kg='kubectl get'
-alias kc='kubectl create -f'
-alias ka='kubectl apply -f'
-alias kdel='kubectl delete -f'
-alias kcdel='kubectl delete configmap'
-alias kd='kubectl describe'
-alias kl='kubectl logs'
-alias ke='kubectl exec -it'
-alias kcontext='kubectl config set-context $(kubectl config current-context)' # add --namespace=<ns>
-alias kdelete='kubectl delete --grace-period=0 --force po'
-alias kwp='watch kubectl get pod -owide'
-kct () { kubectl config use-context $1 }
-kns () { kubectl config set-context $(kubectl config current-context) --namespace=$1 }
-kdevict() { kubectl get pods | grep Evicted | awk '{print $1}' | xargs kubectl delete pod }
-
-
-
-git-standup() {
-    AUTHOR=${AUTHOR:="`git config user.name`"}
-
-    since=yesterday
-    if [[ $(date +%u) == 1 ]] ; then
-        since="2 days ago"
-    fi
-
-    git log --all --since "$since" --oneline --author="$AUTHOR"
-}
-#---------------Confif for nmp--------------------------
-alias npmr="npm run"
-#---------------Config for neovim-----------------------
 alias zshrc="nvim ~/.zshrc"
 alias nvim_init="nvim ~/.config/nvim/init.vim"
 alias v=nvim
 alias tmux="tmux -u"
-#---------------DOCKER----------------------------------
-alias d="docker"
-alias dopen="open --background -a Docker"
-alias dimg="docker image"
-alias dimgs="docker images"
-alias dpull="docker pull"
-alias dps="docker ps"
-alias dc="docker-compose"
-alias dr="docker run"
-alias drmif="docker rmi -f"
-alias db="docker build"
-#---------------Flutter---------------------------------
-alias fld="flutter doctor"https://nehttps://nestjs-now.thaisoncoderstokyo.now.shstjs-now.thaisoncoderstokyo.now.sh
 
 #---------------NETWORKING------------------------------
 alias myip='curl -4 icanhazip.com; curl -6 icanhazip.com'       # myip:             Public facing IP Address
