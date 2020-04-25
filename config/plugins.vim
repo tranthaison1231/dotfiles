@@ -13,8 +13,8 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'huytd/vim-quickrun'
 Plug 'honza/vim-snippets'
 Plug 'sheerun/vim-polyglot'
-Plug 'othree/html5.vim'
-Plug 'cakebaker/scss-syntax.vim'
+" Plug 'othree/html5.vim'
+" Plug 'cakebaker/scss-syntax.vim'
 " When use coc.nvim don't use deoplete and Youcompleme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion
 Plug 'neoclide/coc-denite'
