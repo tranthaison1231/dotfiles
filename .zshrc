@@ -2,15 +2,17 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 
-# Path for your nvim
+# Path for your nvm
 export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:$HOME/flutter/bin"
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
-
 ln -fs ~/.config/nvim/.zshrc ~/.zshrc
+# Path for flutter
+export PATH="$PATH:$HOME/flutter/bin"
+
 # ln -sf "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 
@@ -54,13 +56,6 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 # Make Terminal better
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
 alias mv="mv -iv"                                               # Preferred 'mv' implentation
-alias mkdir="mkdir -pv"                                         # Preferred 'mkdir' implentation
-alias src="source"
-alias ...='cd ../../'                                           # Go back 2 directory levels
-alias .3='cd ../../../'                                         # Go back 3 directory levels
-alias .4='cd ../../../../'                                      # Go back 4 directory levels
-alias .5='cd ../../../../../'                                   # Go back 5 directory levels
-alias .6='cd ../../../../../../'                                # Go back 6 directory levels
 alias path='echo -e ${PATH//:/\\n}'                             # path:         Echo all executable Paths
 alias ls='colorls'
 
