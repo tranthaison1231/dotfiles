@@ -10,3 +10,4 @@ $ rm -rf ~/config/nvim && git clone https://github.com/tranthaison1231/Dotfiles 
 
 **Orther dotfiles**:
 - https://github.com/codeaholicguy/dotfiles
+- https://github.com/chau-bao-long/dotfiles
