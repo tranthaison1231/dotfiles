@@ -18,26 +18,11 @@ ln -fs ~/.config/nvim/.zshrc ~/.zshrc
 ZSH_THEME="spaceship"
 
 plugins=(
-  iterm2
   git
-  vi-mode
-  command-not-found
-  dotenv
-  docker-compose
-  osx
-  common-aliases  
   zsh-autosuggestions
   zsh-syntax-highlighting
-  colored-man-pages
-  colorize
   zsh-completions
-  yarn
-  npm
   brew
-  osx
-  nvm
-  dotenv
-  colorize
 )
 
 source $ZSH/oh-my-zsh.sh
