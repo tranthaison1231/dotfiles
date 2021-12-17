@@ -1,20 +1,5 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-
-# Path for your nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ln -fs ~/.config/nvim/.zshrc ~/.zshrc
-# Path for flutter
-export PATH="$PATH:$HOME/flutter/bin"
-
-# ln -sf "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
 
 
 ZSH_THEME="spaceship"
@@ -45,20 +30,10 @@ export PSQL_DIR=/usr/local/pgsql/bin/
 export PATH="$PSQL_DIR:$PATH"
 
 
-# Add Go Development 
-export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-test -d "${GOPATH}" || mkdir "${GOPATH}"
-test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
-
-
 # Make Terminal better
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
 alias mv="mv -iv"                                               # Preferred 'mv' implentation
 alias path='echo -e ${PATH//:/\\n}'                             # path:         Echo all executable Paths
-alias ls='colorls'
-
 alias pipcorn="npx pipcorn"
 alias trash="rm -rf ~/.Trash/*"
 alias x="exit"
