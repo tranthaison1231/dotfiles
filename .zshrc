@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ln -fs ~/.config/nvim/.zshrc ~/.zshrc
+ln -fs ~/.config/.zshrc ~/.zshrc
 
 
 ZSH_THEME="spaceship"
@@ -40,7 +40,6 @@ alias x="exit"
 alias sb="source ~/.bash_profile"
 alias hc="history -c"
 alias zshrc="nvim ~/.zshrc"
-alias nvim_init="nvim ~/.config/nvim/init.vim"
 alias v=nvim
 alias tmux="tmux -u"
 
