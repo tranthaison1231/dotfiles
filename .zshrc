@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ln -fs ~/.config/Dotfiles/.zshrc ~/.zshrc
+ln -fs ~/.config/nvim/.zshrc ~/.zshrc
 
 
 ZSH_THEME="spaceship"
