@@ -8,7 +8,15 @@
 rm -rf ~/.config && git clone https://github.com/tranthaison1231/dotfiles ~/.config/
 ```
 
-2. Add theme dracula for oh-my-zsh
+2. Run bootstrap
+
+```bash
+cd ~/.config
+
+./bootstrap/mac.sh <email-address> <username>
+```
+
+3. Add theme dracula for oh-my-zsh
 
 - https://draculatheme.com/zsh
 

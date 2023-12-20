@@ -8,7 +8,7 @@ end
 
 -- Settings
 config.color_scheme = "Dracula"
-config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium" })
+config.font = wezterm.font("Fira Code", { weight = "Medium" })
 config.font_size = 14
 config.window_decorations = "RESIZE"
 config.status_update_interval = 1000
