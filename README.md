@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-rm -rf ~/config/nvim && rm -rf ~/.config/wezterm && git clone https://github.com/tranthaison1231/dotfiles ~/.config/
+rm -rf ~/config && git clone https://github.com/tranthaison1231/dotfiles ~/.config/
 ```
 
 ## REFERENCES
