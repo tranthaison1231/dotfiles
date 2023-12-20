@@ -25,7 +25,7 @@ install_oh_my_zsh() {
 install_tools() {
 	read -r -p "Do you want to install some amazing tools ? [y|N] " response
 	if [[ $response =~ (y|yes|Y) ]]; then
-		# termnial
+		# Termnial
 		brew install --cask wezterm
 		brew install tmux
 		brew install neovim
@@ -34,12 +34,12 @@ install_tools() {
 		brew install fzf
 		brew install lua
 
-		# zsh
+		# Zsh
 		brew install zsh-completions
 		brew install zsh-syntax-highlighting
 		brew install zsh-autosuggestions
 
-		# font
+		# Font
 		brew tap homebrew/cask-fonts
 		brew cask install font-hack-nerd-font
 		brew cask install font-fira-code-nerd-font
@@ -52,10 +52,20 @@ install_tools() {
 		# Languages
 		# nodejs
 		brew install pnpm
+		brew install node
 		brew install nvm
 
 		# golang
 		brew install go
+
+		# Another
+		brew install --cask raycast
+		brew install --cask notion
+		brew install --cask arc
+		brew install --cask kap
+		brew install --cask orbstack
+		brew install --cask slack
+		brew install --cask discord
 
 		echo "Successful to setting homebrew..."
 	fi
