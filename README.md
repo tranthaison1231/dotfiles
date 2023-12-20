@@ -1,4 +1,4 @@
-# My DotFile
+# My Amazing Dotfiles
 
 ## Install
 
