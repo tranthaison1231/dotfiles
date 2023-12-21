@@ -1,5 +1,8 @@
 gui:
   showIcons: true
+  nerdFontsVersion: "3"
+  timeFormat: "03 Jan 06" # https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: "4:04PM"
 git:
   paging:
     colorArg: always
