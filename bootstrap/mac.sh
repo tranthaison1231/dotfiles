@@ -33,6 +33,8 @@ install_tools() {
 		brew install lazygit
 		brew install fzf
 		brew install lua
+		brew install luarocks
+		luarocks --local --lua-version 5.1 install magick
 
 		# Zsh
 		brew install zsh-completions
