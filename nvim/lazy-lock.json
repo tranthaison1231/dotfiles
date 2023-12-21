@@ -1,7 +1,7 @@
 {
   "LazyVim": { "branch": "main", "commit": "879e29504d43e9f178d967ecc34d482f902e5a91" },
   "LuaSnip": { "branch": "master", "commit": "57c9f5c31b3d712376c704673eac8e948c82e9c1" },
-  "SchemaStore.nvim": { "branch": "main", "commit": "c23407de1f76df30ca197b69d78a11be5ce26009" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "5372bf247839b46a121375d3d610ab8409d6100d" },
   "bufferline.nvim": { "branch": "main", "commit": "e48ce1805697e4bb97bc171c081e849a65859244" },
   "catppuccin": { "branch": "main", "commit": "079500a625f3ae5aa6efb758f1a17fe4c7a57e52" },
   "cmake-tools.nvim": { "branch": "master", "commit": "a60c9571060c72f2af53b1c13864d42d406fc971" },
@@ -21,7 +21,6 @@
   "gitsigns.nvim": { "branch": "main", "commit": "d195f0c35ced5174d3ecce1c4c8ebb3b5bc23fa9" },
   "headlines.nvim": { "branch": "master", "commit": "e3d7bfdf40e41a020d966d35f8b48d75b90367d2" },
   "image.nvim": { "branch": "master", "commit": "41f0f2643a09631bc0d8e2837b514667d423e440" },
-  "image_preview.nvim": { "branch": "main", "commit": "367122b7fe7ab1a52fb71d09eab2db187de7330d" },
   "indent-blankline.nvim": { "branch": "master", "commit": "f3eb33c04c3c5028b4efa7dbf8f68abdb6ab50ed" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },

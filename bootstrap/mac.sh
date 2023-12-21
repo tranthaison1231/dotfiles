@@ -25,16 +25,20 @@ install_oh_my_zsh() {
 install_tools() {
 	read -r -p "Do you want to install some amazing tools ? [y|N] " response
 	if [[ $response =~ (y|yes|Y) ]]; then
-		# Termnial
+		# Terminal
 		brew install --cask wezterm
 		brew install tmux
 		brew install neovim
 		brew install diff-so-fancy
-		brew install lazygit
 		brew install fzf
 		brew install lua
 		brew install luarocks
 		luarocks --local --lua-version 5.1 install magick
+
+		# Git
+		brew install git
+		brew install git-delta
+		brew install lazygit
 
 		# Zsh
 		brew install zsh-completions
