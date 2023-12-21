@@ -26,7 +26,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
     -- import/override with your plugins
     { import = "plugins" },
-    { "akinsho/git-conflict.nvim", version = "*", config = true },
   },
   defaults = {
     lazy = false,
