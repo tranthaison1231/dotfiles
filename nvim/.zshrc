@@ -1,5 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ln -fs ~/.config/nvim/.zshrc ~/.zshrc
+mkdir -p ~/Library/Application\ Support/lazygit
+ln -fs ~/.config/lazygit ~/Library/Application\ Support/lazygit
 
 ZSH_THEME="dracula"
 
@@ -26,7 +28,6 @@ export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export PSQL_DIR=/usr/local/pgsql/bin/
 export PATH="$PSQL_DIR:$PATH"
-export XDG_CONFIG_HOME="$HOME/.config"
 
 # Make Terminal better
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
