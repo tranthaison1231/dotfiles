@@ -1,7 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ln -fs ~/.config/nvim/.zshrc ~/.zshrc
-mkdir -p ~/Library/Application\ Support/lazygit
-ln -fs ~/.config/lazygit ~/Library/Application\ Support/lazygit
+ln -fs ~/.config/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml
 
 ZSH_THEME="dracula"
 
