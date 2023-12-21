@@ -14,7 +14,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-# Add android PATH ( React Native and Flutter )
 export PATH="$PATH:$HOME/flutter/bin" # Config for flutter
 export LC_ALL=en_US.UTF-8
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -27,7 +26,7 @@ export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export PSQL_DIR=/usr/local/pgsql/bin/
 export PATH="$PSQL_DIR:$PATH"
-
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Make Terminal better
 alias cp="cp -iv"                                               # Preferred 'cp' implentation
