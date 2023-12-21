@@ -1,3 +1,5 @@
+gui:
+  showIcons: true
 git:
   paging:
     colorArg: always
