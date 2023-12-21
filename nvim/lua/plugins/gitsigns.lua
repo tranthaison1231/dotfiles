@@ -24,6 +24,8 @@ return {
             opts.buffer = bufnr
             vim.keymap.set(mode, l, r, opts)
           end
+
+          map("n", "<leader>hp", gs.preview_hunk)
         end,
       })
       vim.api.nvim_set_hl(0, "GitSignsAdd", { ctermbg = 0, fg = "#50FA7B" })
