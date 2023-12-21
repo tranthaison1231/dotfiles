@@ -17,7 +17,7 @@ return {
           changedelete = { text = "▎" },
           untracked = { text = "▎" },
         },
-        on_attach = function(bufnr)
+        on_attach = function(buffer)
           local gs = package.loaded.gitsigns
 
           local function map(mode, l, r, desc)

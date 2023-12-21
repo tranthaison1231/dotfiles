@@ -21,6 +21,29 @@ return {
     opts = function()
       local cspell = require("cspell")
       local ok, none_ls = pcall(require, "null-ls")
+
+      local cspell_config = {
+        diagnostics_postprocess = function(diagnostic)
+          diagnostic.severity = vim.diagnostic.severity["HINT"] -- ERROR, WARN, INFO, HINT
+        end,
+        config = {
+          find_json = function(_)
+            return vim.fn.expand("~/.config/nvim/cspell.json")
+          end,
+          on_add_to_json = function(cspell_config_file_path, params, action_name)
+            if action_name == "add_to_json" then
+              os.execute(
+                string.format(
+                  "cat %s | jq -S '.words |= sort' | tee %s > /dev/null",
+                  cspell_config_file_path,
+                  cspell_config_file_path
+                )
+              )
+            end
+          end,
+        },
+      }
+
       if not ok then
         return
       end
@@ -32,13 +55,8 @@ return {
         b.diagnostics.codespell,
         b.diagnostics.misspell,
         -- cspell
-        cspell.diagnostics.with({
-          -- Set the severity to HINT for unknown words
-          diagnostics_postprocess = function(diagnostic)
-            diagnostic.severity = vim.diagnostic.severity["HINT"]
-          end,
-        }),
-        cspell.code_actions,
+        cspell.diagnostics.with(cspell_config),
+        cspell.code_actions.with(cspell_config),
       }
       -- Define the debounce value
       local debounce_value = 200
