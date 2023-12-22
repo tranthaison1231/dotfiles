@@ -2,7 +2,11 @@ return {
   {
     "Mofiqul/dracula.nvim",
   },
-  { "LazyVim/LazyVim", opts = {
-    colorscheme = "dracula",
-  } },
+  -- Configure LazyVim to load theme
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "dracula",
+    },
+  },
 }
