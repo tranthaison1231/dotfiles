@@ -2,6 +2,7 @@ return {
   -- cmdline tools and lsp servers
   {
     "williamboman/mason.nvim",
+    lazy = false,
     opts = {
       ensure_installed = {
         "stylua",
