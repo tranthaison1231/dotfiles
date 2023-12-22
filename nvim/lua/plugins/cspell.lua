@@ -2,15 +2,7 @@
 local installed_tools = { "codespell", "misspell", "cspell" }
 local key_mapping = "<leader>cn"
 
--- Example config with lazyvim
 return {
-  -- Auto install those tools with mason
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = installed_tools,
-    },
-  },
   {
     "nvimtools/none-ls.nvim",
     keys = {
