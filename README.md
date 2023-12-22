@@ -40,3 +40,4 @@ cd ~/.config
 - https://github.com/chau-bao-long/dotfiles
 - https://github.com/theopn/dotfiles
 - https://github.com/pysan3/dotfiles
+- https://github.com/rebelot/dotfiles
