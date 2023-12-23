@@ -102,5 +102,6 @@ if [[ $response =~ (y|yes|Y) ]]; then
 	install_homebrew
 	install_homebrew_tolls
 	install_oh_my_zsh
+	setup_git
 	echo "Finished installation."
 fi
