@@ -13,11 +13,13 @@ config.window_decorations = "RESIZE"
 config.status_update_interval = 1000
 config.enable_kitty_graphics = true
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+config.native_macos_fullscreen_mode = true
 
 -- Config tab_bar
 config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+config.window_close_confirmation = "NeverPrompt"
 
 -- Config Theme Color
 config.colors = {
