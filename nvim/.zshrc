@@ -85,6 +85,9 @@ alias tmuxk="tmux kill -t"
 alias tmuxl="tmux ls"
 
 
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
 function clean-containers() {
     docker rm $(docker ps -a -q)
 }

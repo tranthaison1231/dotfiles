@@ -42,3 +42,5 @@ cd ~/.config
 - https://github.com/pysan3/dotfiles
 - https://github.com/rebelot/dotfiles
 - https://github.com/jellydn/dotfiles
+- https://github.com/nartc/dotfiles
+- https://github.com/nicknisi/dotfiles
