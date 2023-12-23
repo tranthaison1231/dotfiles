@@ -49,7 +49,6 @@ install_tools() {
 		brew tap homebrew/cask-fonts
 		brew cask install font-hack-nerd-font
 		brew cask install font-fira-code-nerd-font
-		brew cask install font-fira-code
 
 		# Manage windows
 		brew install koekeishiya/formulae/yabai
