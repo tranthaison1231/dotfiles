@@ -25,8 +25,15 @@ cd ~/.config
 - lazyvim
   - neo-tree
   - lazygit
+  - git-conflict
+  - git-signs
+  - git-delta
+  - nvim-surround
+  - cspell
+  - outline
   - telescope
   - mason
+  - lsp
     ...
 - wezterm
 - raycast
