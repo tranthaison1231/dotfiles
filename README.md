@@ -51,3 +51,4 @@ cd ~/.config
 - https://github.com/jellydn/dotfiles
 - https://github.com/nartc/dotfiles
 - https://github.com/nicknisi/dotfiles
+- https://github.com/jdhao/dotfiles
