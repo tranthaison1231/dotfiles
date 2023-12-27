@@ -3,4 +3,5 @@ return {
   { "nvimdev/dashboard-nvim", enabled = false },
   { "catppuccin", enabled = false },
   { "nvim-treesitter/nvim-treesitter-context", enabled = false },
+  { "echasnovski/mini.starter", enabled = false },
 }
