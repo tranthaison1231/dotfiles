@@ -1,5 +1,11 @@
 local map = vim.keymap.set
 
+-- Disable arrow keys
+map("n", "<Up>", "<NOP>")
+map("n", "<Down>", "<NOP>")
+map("n", "<Left>", "<NOP>")
+map("n", "<Right>", "<NOP>")
+
 -- Rewrite ControlKeys
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
