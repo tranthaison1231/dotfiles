@@ -35,3 +35,12 @@ map("v", "<C-g>", searching_google_in_visual, { silent = true, noremap = true })
 local open_folder = [[:lua vim.fn.system({ 'open', vim.fn.expand("<cfile")})<CR>]]
 
 map("n", "<leader>o", open_folder, { silent = true, noremap = true })
+
+-- Close buffer
+map("i", "jj", "<ESC>", { silent = true })
+
+-- Resize window
+map("n", "<M-Left>", ":vertical resize +5<CR>")
+map("n", "<M-Right>", ":vertical resize -5<CR>")
+map("n", "<M-Up>", ":resize +5<CR>")
+map("n", "<M-Down>", ":resize -5<CR>")
