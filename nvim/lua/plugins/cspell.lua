@@ -1,5 +1,4 @@
 -- Define the tools to be installed and the key mapping
-local installed_tools = { "codespell", "misspell", "cspell" }
 local key_mapping = "<leader>cn"
 
 return {
