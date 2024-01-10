@@ -13,6 +13,10 @@ map("n", "-", "<C-x>")
 -- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
+-- Save
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
 -- Copy
 map("n", "<C-c>", "yy")
 map("v", "<C-c>", "y")
