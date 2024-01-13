@@ -23,14 +23,13 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.codeium" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
-    -- import/override with your plugins
     { import = "plugins" },
   },
   defaults = {
     lazy = false,
-    version = false, -- always use the latest git commit
+    version = false,
   },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = true },
   performance = {
     rtp = {
       disabled_plugins = {
