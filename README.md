@@ -52,3 +52,4 @@ cd ~/.config
 - https://github.com/nartc/dotfiles
 - https://github.com/nicknisi/dotfiles
 - https://github.com/jdhao/dotfiles
+- https://github.com/GeekMasher/nvim
