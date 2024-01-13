@@ -4,7 +4,7 @@ return {
   keys = { { "<leader>o", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
   opts = {
     autofold_depth = 1,
-    keymaps = { -- These keymaps can be a string or a table for multiple keys
+    keymaps = {
       close = { "<Esc>", "q" },
       goto_location = "<Cr>",
       focus_location = "o",
