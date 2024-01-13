@@ -15,7 +15,7 @@ return {
 
       local cspell_config = {
         diagnostics_postprocess = function(diagnostic)
-          diagnostic.severity = vim.diagnostic.severity["HINT"] -- ERROR, WARN, INFO, HINT
+          diagnostic.severity = vim.diagnostic.severity["HINT"]
         end,
         config = {
           find_json = function(_)
@@ -42,14 +42,11 @@ return {
       local b = none_ls.builtins
 
       local sources = {
-        -- spell check
         b.diagnostics.codespell,
         b.diagnostics.misspell,
-        -- cspell
         cspell.diagnostics.with(cspell_config),
         cspell.code_actions.with(cspell_config),
       }
-      -- Define the debounce value
       local debounce_value = 200
       return {
         sources = sources,
