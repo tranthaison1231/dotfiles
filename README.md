@@ -54,3 +54,4 @@ cd ~/.config
 - https://github.com/jdhao/dotfiles
 - https://github.com/GeekMasher/nvim
 - https://github.com/adibhanna/nvim
+- https://github.com/xixiaofinland/dotfiles/
