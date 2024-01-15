@@ -7,7 +7,6 @@ return {
     dependencies = { "mason.nvim" },
     init = function()
       Util.on_very_lazy(function()
-        -- register the formatter with LazyVim
         require("lazyvim.util").format.register({
           name = "none-ls.nvim",
           priority = 200, -- set higher than conform, the builtin formatter
