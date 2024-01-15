@@ -4,4 +4,5 @@ return {
   { "catppuccin", enabled = false },
   { "nvim-treesitter/nvim-treesitter-context", enabled = false },
   { "echasnovski/mini.starter", enabled = false },
+  { "folke/neoconf.nvim", enabled = false },
 }

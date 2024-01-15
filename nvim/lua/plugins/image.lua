@@ -5,6 +5,7 @@ local exts = { "*.gif", "*.ico", "*.jpeg", "*.jpg", "*.png", "*.svg", "*.tiff", 
 
 return {
   "3rd/image.nvim",
+  event = "VeryLazy",
   opts = {
     backend = "kitty",
     integrations = {
