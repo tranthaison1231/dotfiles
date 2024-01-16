@@ -12,10 +12,10 @@ return {
     vim.cmd([[highlight Incoming guibg=#6272A4]])
 
     require("git-conflict").setup({
-      default_mappings = true, -- disable buffer local mapping created by this plugin
+      default_mappings = true,
       debug = false,
-      default_commands = true, -- disable commands created by this plugin
-      disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
+      default_commands = true,
+      disable_diagnostics = false,
       list_opener = "copen",
       highlights = {
         incoming = "Incoming",
