@@ -10,6 +10,15 @@ local function format(opts)
   end
 end
 
+local formatters = {} ---@type LazyFormatter[]
+
+local function register(formatter)
+  formatters[#formatters + 1] = formatter
+  table.sort(formatters, function(a, b)
+    return a.priority > b.priority
+  end)
+end
+
 return {
   {
     "nvimtools/none-ls.nvim",
@@ -19,7 +28,7 @@ return {
       vim.api.nvim_create_autocmd("User", {
         pattern = "VeryLazy",
         callback = function()
-          require("lazyvim.util").format.register({
+          register({
             name = "none-ls.nvim",
             priority = 200, -- set higher than conform, the builtin formatter
             primary = true,
