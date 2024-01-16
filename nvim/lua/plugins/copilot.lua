@@ -51,7 +51,7 @@ return {
       }
       table.insert(opts.sections.lualine_x, 2, {
         function()
-          local icon = require("lazyvim.config").icons.kinds.Copilot
+          local icon = " "
           local status = require("copilot.api").status.data
           return icon .. (status.message or "")
         end,
