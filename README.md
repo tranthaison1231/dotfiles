@@ -56,3 +56,4 @@ cd ~/.config
 - https://github.com/adibhanna/nvim
 - https://github.com/xixiaofinland/dotfiles/
 - https://github.com/planetsLightningArrester/run-commands
+- https://github.com/nvim-lua/kickstart.nvim
