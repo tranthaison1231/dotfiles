@@ -1,3 +1,15 @@
+vim.api.nvim_create_augroup("neotree_autoopen", { clear = true })
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  desc = "Open neo-tree on enter",
+  group = "neotree_autoopen",
+  callback = function()
+    if not vim.g.neotree_opened then
+      vim.cmd("Neotree show")
+      vim.g.neotree_opened = true
+    end
+  end,
+})
+
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -8,7 +20,13 @@ return {
 		},
 		cmd = "Neotree",
 		keys = {
-			{ "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
+			{
+				"<leader>e",
+				function()
+					require("neo-tree.command").execute({ toggle = true })
+				end,
+				desc = "Explorer NeoTree (root dir)",
+			},
 		},
 		config = function()
 			require("neo-tree").setup({

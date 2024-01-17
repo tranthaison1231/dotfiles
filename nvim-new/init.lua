@@ -12,8 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 
-require("config.keymaps")
 require("config.options")
+require("config.keymaps")
 require("lazy").setup("plugins")
 
 vim.cmd.colorscheme("dracula")
