@@ -55,3 +55,4 @@ cd ~/.config
 - https://github.com/GeekMasher/nvim
 - https://github.com/adibhanna/nvim
 - https://github.com/xixiaofinland/dotfiles/
+- https://github.com/planetsLightningArrester/run-commands
