@@ -1,4 +1,9 @@
+vim.g.mapleader = " "
+
 local map = vim.keymap.set
+
+-- Quit
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
 -- Disable arrow keys
 map("n", "<Up>", "<NOP>")
