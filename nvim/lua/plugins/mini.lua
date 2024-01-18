@@ -1,5 +1,0 @@
-return {
-  {
-    "echasnovski/mini.hipatterns",
-  },
-}
