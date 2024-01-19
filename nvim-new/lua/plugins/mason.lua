@@ -12,6 +12,7 @@ return {
         "misspell",
         "cspell",
         "markdownlint",
+        "marksman",
         "js-debug-adapter",
         "astro-language-server",
         "solidity",
