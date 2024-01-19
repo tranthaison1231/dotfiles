@@ -10,7 +10,6 @@ return {
     event = "LspAttach",
     config = function()
       local saga = require("lspsaga")
-
       saga.setup({
         symbol_in_winbar = {
           enable = false,
@@ -37,7 +36,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
+    version = false,
     build = ":TSUpdate",
     event = { "VeryLazy" },
     opts = {
@@ -88,30 +87,62 @@ return {
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
+    "neovim/nvim-lspconfig",
     opts = {
-      formatters_by_ft = {
-        ["javascript"] = { "prettier" },
-        ["javascriptreact"] = { "prettier" },
-        ["typescript"] = { "prettier" },
-        ["typescriptreact"] = { "prettier" },
-        ["vue"] = { "prettier" },
-        ["css"] = { "prettier" },
-        ["scss"] = { "prettier" },
-        ["less"] = { "prettier" },
-        ["html"] = { "prettier" },
-        ["json"] = { "prettier" },
-        ["jsonc"] = { "prettier" },
-        ["yaml"] = { "prettier" },
-        ["markdown"] = { "prettier" },
-        ["markdown.mdx"] = { "prettier" },
-        ["graphql"] = { "prettier" },
-        ["handlebars"] = { "prettier" },
+      servers = {
+        tsserver = {
+          keys = {
+            {
+              "<leader>co",
+              function()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { "source.organizeImports.ts" },
+                    diagnostics = {},
+                  },
+                })
+              end,
+              desc = "Organize Imports",
+            },
+            {
+              "<leader>cR",
+              function()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { "source.removeUnused.ts" },
+                    diagnostics = {},
+                  },
+                })
+              end,
+              desc = "Remove Unused Imports",
+            },
+          },
+          settings = {
+            typescript = {
+              format = {
+                indentSize = vim.o.shiftwidth,
+                convertTabsToSpaces = vim.o.expandtab,
+                tabSize = vim.o.tabstop,
+              },
+            },
+            javascript = {
+              format = {
+                indentSize = vim.o.shiftwidth,
+                convertTabsToSpaces = vim.o.expandtab,
+                tabSize = vim.o.tabstop,
+              },
+            },
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
+        },
       },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
   },
 }

@@ -17,14 +17,14 @@ return {
         "astro-language-server",
         "solidity",
       },
-     },
+    },
   },
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
         "tsserver",
-      }
-    } 
-  }
+      },
+    },
+  },
 }
