@@ -41,6 +41,7 @@ cd ~/.config
 
 ## Reference
 
+- https://github.com/LazyVim/LazyVim
 - https://github.com/codeaholicguy/dotfiles
 - https://github.com/louishuyng/dotfiles
 - https://github.com/immint023/dotfiles
