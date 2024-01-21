@@ -24,7 +24,7 @@ return {
         "solidity",
         "tsserver",
         "eslint",
-        "lua_ls"
+        "lua_ls",
       },
     },
   },
