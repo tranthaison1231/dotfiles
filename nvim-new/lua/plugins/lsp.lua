@@ -54,7 +54,6 @@ return {
         "lua",
         "luadoc",
         "luap",
-        "markdown",
         "markdown_inline",
         "python",
         "query",
