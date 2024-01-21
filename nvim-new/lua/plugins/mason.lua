@@ -1,7 +1,6 @@
 return {
   {
     "williamboman/mason.nvim",
-    lazy = false,
     opts = {
       ensure_installed = {
         "stylua",
@@ -15,7 +14,6 @@ return {
         "marksman",
         "js-debug-adapter",
         "astro-language-server",
-        "solidity"
       },
     },
   },
@@ -23,9 +21,10 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
+        "solidity",
         "tsserver",
-        "markdownlint",
-        "tailwindcss"
+        "eslint",
+        "lua_ls"
       },
     },
   },
