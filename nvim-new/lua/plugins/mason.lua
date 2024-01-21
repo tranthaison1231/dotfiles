@@ -15,7 +15,7 @@ return {
         "marksman",
         "js-debug-adapter",
         "astro-language-server",
-        "solidity",
+        "solidity"
       },
     },
   },
@@ -24,6 +24,8 @@ return {
     opts = {
       ensure_installed = {
         "tsserver",
+        "markdownlint",
+        "tailwindcss"
       },
     },
   },
