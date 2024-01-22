@@ -5,7 +5,7 @@ return {
     build = ":TSUpdate",
     event = { "VeryLazy" },
     opts = {
-      highlight = { enable = true, use_languagetree = true },
+      highlight = { enable = true },
       indent = { enable = true },
       ensure_installed = {
         "bash",
@@ -51,6 +51,5 @@ return {
         },
       },
     },
-  }, 
+  },
 }
-
