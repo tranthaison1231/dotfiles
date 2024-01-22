@@ -43,6 +43,7 @@ cd ~/.config
 
 - https://github.com/LazyVim/LazyVim
 - https://github.com/NvChad/NvChad
+- https://github.com/jamestrew/nvim
 - https://github.com/louishuyng/dotfiles
 - https://github.com/immint023/dotfiles
 - https://github.com/chau-bao-long/dotfiles
