@@ -13,6 +13,7 @@ return {
         "diff",
         "html",
         "javascript",
+        "prisma",
         "jsdoc",
         "json",
         "jsonc",
