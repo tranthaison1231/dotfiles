@@ -22,6 +22,7 @@ return {
     opts = {
       ensure_installed = {
         "solidity",
+        "prismals",
         "tsserver",
         "eslint",
         "lua_ls",
