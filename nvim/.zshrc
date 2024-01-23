@@ -39,7 +39,7 @@ alias sb="source ~/.bash_profile"
 alias hc="history -c"
 alias zshrc="nvim ~/.zshrc"
 alias v=nvim
-alias vz="NVIM_APPNAME=legacy-nvim nvim"
+alias vz="NVIM_APPNAME=nvim-legacy nvim"
 alias tmux="tmux -u"
 
 #---------------NETWORKING------------------------------
