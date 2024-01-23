@@ -1,8 +1,5 @@
 local map = vim.keymap.set
 
--- Quit
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
-
 -- Disable arrow keys
 map("n", "<Up>", "<NOP>")
 map("n", "<Down>", "<NOP>")
@@ -19,9 +16,6 @@ map("n", "<C-a>", "gg<S-v>G")
 -- Save
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
-
--- save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- Copy
 map("n", "<C-c>", "yy")
@@ -54,9 +48,3 @@ map("n", "<M-Left>", ":vertical resize +5<CR>")
 map("n", "<M-Right>", ":vertical resize -5<CR>")
 map("n", "<M-Up>", ":resize +5<CR>")
 map("n", "<M-Down>", ":resize -5<CR>")
-
--- Move to window using the <ctrl> hjkl keys
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
