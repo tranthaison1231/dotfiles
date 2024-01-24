@@ -24,5 +24,3 @@ return function(client, bufnr)
   buf_set_keymap("v", "<Leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
   buf_set_keymap("n", "<C-r>", ":Lspsaga rename<CR>", opts)
 end
-
-
