@@ -71,3 +71,6 @@ map("t", "<esc>", [[<C-\><C-n>]], opts)
 map("n", "<leader>tt", function()
   vim.cmd("ToggleTerm")
 end)
+
+-- diagnostic
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
