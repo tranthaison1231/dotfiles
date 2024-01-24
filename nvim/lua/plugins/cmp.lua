@@ -1,8 +1,21 @@
 return {
   "saadparwaiz1/cmp_luasnip",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
+  {
+    "hrsh7th/cmp-nvim-lua",
+    dependencies = "cmp_luasnip",
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    dependencies = "cmp-nvim-lua",
+  },
+  {
+    "hrsh7th/cmp-buffer",
+    dependencies = "cmp-nvim-lsp",
+  },
+  {
+    "hrsh7th/cmp-path",
+    dependencies = "cmp-nvim-lsp",
+  },
   {
     "rafamadriz/friendly-snippets",
     event = "InsertEnter",
