@@ -66,7 +66,8 @@ map("n", "<leader>xx", function()
   require("trouble").toggle()
 end)
 
--- Toggle Term
+-- Toggle Terms
+map("t", "<esc>", [[<C-\><C-n>]], opts)
 map("n", "<leader>tt", function()
   vim.cmd("ToggleTerm")
 end)
