@@ -20,7 +20,7 @@ map("n", "<C-a>", "gg<S-v>G")
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 
--- save file
+-- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- Copy
@@ -72,5 +72,5 @@ map("n", "<leader>tt", function()
   vim.cmd("ToggleTerm")
 end)
 
--- diagnostic
+-- Diagnostic
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })

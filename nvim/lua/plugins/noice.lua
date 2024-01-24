@@ -23,4 +23,13 @@ return {
       },
     })
   end,
+  keys = {
+    {
+      "<leader><esc>",
+      function()
+        require("noice").cmd("dismiss")
+      end,
+      desc = "Dismiss All",
+    },
+  },
 }
