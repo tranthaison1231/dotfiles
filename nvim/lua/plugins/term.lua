@@ -10,6 +10,8 @@ return {
         direction = "float",
         float_opts = {
           border = "curved",
+          width = 9999,
+          height = 9999,
         },
         on_open = function(term)
           vim.cmd("startinsert!")
