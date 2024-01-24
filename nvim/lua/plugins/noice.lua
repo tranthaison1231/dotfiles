@@ -25,7 +25,7 @@ return {
   end,
   keys = {
     {
-      "<leader><esc>",
+      "<leader>`",
       function()
         require("noice").cmd("dismiss")
       end,
