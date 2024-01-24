@@ -32,6 +32,12 @@ return {
       require("nvim-treesitter.configs").setup({
         highlight = { enable = true },
         indent = { enable = true },
+        autotag = {
+          enable = true,
+          anable_rename = true,
+          enable_close = true,
+          anable_close_on_slash = true,
+        },
         ensure_installed = {
           "bash",
           "c",
