@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-      event = { "BufWritePre" },
+    event = { "BufWritePre" },
     cmd = { "ConformInfo" },
     config = function()
       vim.api.nvim_create_user_command("FormatDisable", function(args)
@@ -22,7 +22,7 @@ return {
         desc = "Re-enable autoformat-on-save",
       })
 
-      require("conform").setup {
+      require("conform").setup({
         format_on_save = function(bufnr)
           if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
             return
@@ -52,7 +52,7 @@ return {
           graphql = { { "prettierd", "prettier" } },
           handlebars = { { "prettierd", "prettier" } },
         },
-      }
-    end,  
+      })
+    end,
   },
 }
