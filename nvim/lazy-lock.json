@@ -1,5 +1,6 @@
 {
   "conform.nvim": { "branch": "master", "commit": "3d59cbd01a4b74124c5a6fb23b8cc63e5c2db3d5" },
+  "copilot.lua": { "branch": "master", "commit": "b03617a6dc4bc88b65ab5deac1631da9a9c2dcaf" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "dracula.nvim": { "branch": "main", "commit": "a6cb758d4b182d9f2b7e742910078d94877c1059" },
   "git-conflict.nvim": { "branch": "main", "commit": "4c8e252b87d54d944c1e56bfb477f78b6fdaf661" },
