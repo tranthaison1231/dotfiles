@@ -65,3 +65,8 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 map("n", "<leader>xx", function()
   require("trouble").toggle()
 end)
+
+-- Toggle Term
+map("n", "<leader>tt", function()
+  vim.cmd("ToggleTerm")
+end)
