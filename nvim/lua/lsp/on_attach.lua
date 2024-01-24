@@ -8,7 +8,6 @@ return function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
 
-  -- Mappings options.
   local opts = {
     noremap = true,
     silent = true,
