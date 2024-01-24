@@ -30,13 +30,12 @@ return {
           { "fancy_macro" },
           { "fancy_diagnostics" },
           { "fancy_searchcount" },
-          { "fancy_location" },
         },
         lualine_y = {
           { "fancy_filetype", ts_icon = "" },
         },
         lualine_z = {
-          { "fancy_lsp_servers" },
+          { "fancy_location" },
         },
       },
     },
