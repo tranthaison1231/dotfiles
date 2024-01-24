@@ -11,7 +11,7 @@ return {
           debounce = 75,
           keymap = {
             accept = "<Tab>",
-            next = "<M-]>",
+            next = "<C-n]>",
             dismiss = "<C-]>",
           },
         },
