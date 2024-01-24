@@ -3,7 +3,6 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
-      "meuter/lualine-so-fancy.nvim",
     },
     opts = {
       options = {
@@ -17,25 +16,24 @@ return {
       },
       sections = {
         lualine_a = {
-          { "fancy_mode", width = 3 },
+          { "mode", width = 3 },
         },
         lualine_b = {
-          { "fancy_branch" },
-          { "fancy_diff" },
+          { "branch" },
+          { "diff" },
         },
         lualine_c = {
-          { "fancy_cwd", substitute_home = true },
+          { "%f" },
         },
         lualine_x = {
-          { "fancy_macro" },
-          { "fancy_diagnostics" },
-          { "fancy_searchcount" },
+          { "macro" },
+          { "diagnostics" },
         },
         lualine_y = {
-          { "fancy_filetype", ts_icon = "" },
+          { "filetype", ts_icon = "" },
         },
         lualine_z = {
-          { "fancy_location" },
+          { "datetime" },
         },
       },
     },
