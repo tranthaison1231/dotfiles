@@ -41,7 +41,7 @@ cd ~/.config
 
 ## Showcase
 
-- !(showcase)[./docs/images/showcase.png]
+- ![showcase](./docs/images/showcase.png)
 
 ## Reference
 
