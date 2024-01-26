@@ -1,10 +1,20 @@
 return {
   {
+    "echasnovski/mini.pairs",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     version = false,
     build = ":TSUpdate",
     dependencies = {
-      "windwp/nvim-ts-autotag",
+      {
+        "windwp/nvim-ts-autotag",
+        config = function()
+          require("nvim-ts-autotag").setup()
+        end,
+      },
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
         config = function()
