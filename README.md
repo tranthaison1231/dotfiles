@@ -39,6 +39,10 @@ cd ~/.config
 - raycast
 - dracula theme
 
+## Showcase
+
+- !(showcase)[./docs/images/showcase.png]
+
 ## Reference
 
 - https://github.com/LazyVim/LazyVim
