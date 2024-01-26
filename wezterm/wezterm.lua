@@ -91,4 +91,13 @@ config.colors = {
 
 config.window_background_opacity = 0.85
 
+-- Shoundn't confirm when close
+config.keys = {
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentTab({ confirm = false }),
+	},
+}
+
 return config

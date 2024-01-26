@@ -32,9 +32,6 @@ return {
         lualine_y = {
           { "filetype", ts_icon = "" },
         },
-        lualine_z = {
-          { "datetime" },
-        },
       },
     },
   },
