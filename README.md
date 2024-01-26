@@ -45,6 +45,7 @@ cd ~/.config
 - https://github.com/NvChad/NvChad
 - https://github.com/jamestrew/nvim
 - https://github.com/AlejandroSuero/.conig
+- https://github.com/badele/vide
 - https://github.dev/ecosse3/nvim
 - https://github.com/mischavandenburg/dotfiles
 - https://github.com/louishuyng/dotfiles
@@ -62,5 +63,4 @@ cd ~/.config
 - https://github.com/xixiaofinland/dotfiles/
 - https://github.com/planetsLightningArrester/run-commands
 - https://github.com/nvim-lua/kickstart.nvim
-- https://github.com/ncnthien/dotfiles
 - https://github.com/hungvx-dev/Dotfiles
