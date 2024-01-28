@@ -33,6 +33,7 @@ install_tools() {
 		brew install fzf
 		brew install lua
 		brew install luarocks
+		brew install starship
 		luarocks --local --lua-version 5.1 install magick
 
 		# Git
