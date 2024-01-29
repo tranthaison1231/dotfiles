@@ -8,6 +8,34 @@ autocmd BufEnter *.ts  setlocal
 ]])
 
 lsp_config.tsserver.setup({
+  keys = {
+    {
+      "<leader>co",
+      function()
+        vim.lsp.buf.code_action({
+          apply = true,
+          context = {
+            only = { "source.organizeImports.ts" },
+            diagnostics = {},
+          },
+        })
+      end,
+      desc = "Organize Imports",
+    },
+    {
+      "<leader>cR",
+      function()
+        vim.lsp.buf.code_action({
+          apply = true,
+          context = {
+            only = { "source.removeUnused.ts" },
+            diagnostics = {},
+          },
+        })
+      end,
+      desc = "Remove Unused Imports",
+    },
+  },
   on_attach = function(client, bufnr)
     client.server_capabilities.document_formatting = false
     on_attach(client, bufnr)
@@ -18,10 +46,6 @@ lsp_config.tsserver.setup({
       update_imports_on_move = true,
     })
     ts_utils.setup_client(client)
-
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>co", ":TSLspOrganize<CR>", { silent = true })
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>cR", ":TSLspRenameFile<CR>", { silent = true })
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ci", ":TSLspImportAll<CR>", { silent = true })
   end,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
   root_dir = function()

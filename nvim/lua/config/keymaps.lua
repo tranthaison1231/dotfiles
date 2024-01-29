@@ -44,7 +44,7 @@ map("v", "<C-g>", searching_google_in_visual, { silent = true, noremap = true })
 -- Open folder on current buffer
 local open_folder = [[:lua vim.fn.system({ 'open', vim.fn.expand("<cfile")})<CR>]]
 
-map("n", "<leader>o", open_folder, { silent = true, noremap = true })
+map("n", "<leader>o", open_folder, { silent = true, noremap = true, desc = "Open folder" })
 
 -- Close buffer
 map("i", "jj", "<ESC>", { silent = true })
@@ -80,3 +80,6 @@ map("n", "<C-r>", "<Cmd>redo<cr>", otps)
 
 -- Rename
 map("n", "<leader>cr", "<Cmd>Lspsaga rename<cr>", opts)
+
+-- Mason
+map("n", "<leader>cm", "<Cmd>Mason<cr>", opts)
