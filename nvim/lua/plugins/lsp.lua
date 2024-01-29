@@ -28,4 +28,18 @@ return {
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
+  {
+    "toppair/peek.nvim",
+    event = { "VeryLazy" },
+    build = "deno task --quiet build:fast",
+    config = function()
+      require("peek").setup({
+        app = "browser",
+      })
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+
+      vim.api.nvim_set_keymap("n", "<leader>cp", ":PeekOpen<CR>", { desc = "Markdown preview" })
+    end,
+  },
 }
