@@ -6,7 +6,6 @@ lsp_config.html.setup({
     client.server_capabilities.document_formatting = false
     on_attach(client, bufnr)
   end,
-  cmd = { "vscode-html-language-server", "--stdio" },
   filetypes = { "html", "typescriptreact" },
   init_options = {
     configurationSection = { "html", "css", "javascript" },
