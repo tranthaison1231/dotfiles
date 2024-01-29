@@ -32,7 +32,7 @@ return {
   end,
   keys = {
     {
-      "<leader>`",
+      "<leader>nd",
       function()
         require("noice").cmd("dismiss")
       end,
