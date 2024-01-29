@@ -11,8 +11,7 @@ return {
     "nvimdev/lspsaga.nvim",
     event = "LspAttach",
     config = function()
-      local saga = require("lspsaga")
-      saga.setup({
+      require("lspsaga").setup({
         symbol_in_winbar = {
           enable = false,
         },
@@ -21,13 +20,6 @@ return {
         },
         beacon = {
           enable = false,
-        },
-        rename = {
-          quit = "<C-c>",
-          exec = "<CR>",
-          mark = "x",
-          confirm = "<CR>",
-          in_select = false,
         },
       })
     end,

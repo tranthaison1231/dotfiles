@@ -74,3 +74,9 @@ end)
 
 -- Diagnostic
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+
+-- Redo
+map("n", "<C-r>", "<Cmd>redo<cr>", otps)
+
+-- Rename
+map("n", "<leader>cr", "<Cmd>Lspsaga rename<cr>", opts)
