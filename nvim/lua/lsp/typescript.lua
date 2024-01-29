@@ -22,19 +22,6 @@ lsp_config.tsserver.setup({
       end,
       desc = "Organize Imports",
     },
-    {
-      "<leader>cR",
-      function()
-        vim.lsp.buf.code_action({
-          apply = true,
-          context = {
-            only = { "source.removeUnused.ts" },
-            diagnostics = {},
-          },
-        })
-      end,
-      desc = "Remove Unused Imports",
-    },
   },
   on_attach = function(client, bufnr)
     client.server_capabilities.document_formatting = false
