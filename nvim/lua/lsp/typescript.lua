@@ -8,21 +8,6 @@ autocmd BufEnter *.ts  setlocal
 ]])
 
 lsp_config.tsserver.setup({
-  keys = {
-    {
-      "<leader>co",
-      function()
-        vim.lsp.buf.code_action({
-          apply = true,
-          context = {
-            only = { "source.organizeImports.ts" },
-            diagnostics = {},
-          },
-        })
-      end,
-      desc = "Organize Imports",
-    },
-  },
   on_attach = function(client, bufnr)
     client.server_capabilities.document_formatting = false
     on_attach(client, bufnr)
@@ -39,3 +24,25 @@ lsp_config.tsserver.setup({
     return vim.fn.getcwd()
   end,
 })
+
+local map = vim.keymap.set
+
+map("n", "<leader>cR", function()
+  vim.lsp.buf.code_action({
+    apply = true,
+    context = {
+      only = { "source.removeUnused.ts" },
+      diagnostics = {},
+    },
+  })
+end, { desc = "Remove Unused Imports" })
+
+map("n", "<leader>co", function()
+  vim.lsp.buf.code_action({
+    apply = true,
+    context = {
+      only = { "source.organizeImports.ts" },
+      diagnostics = {},
+    },
+  })
+end, { desc = "Organize Imports" })
