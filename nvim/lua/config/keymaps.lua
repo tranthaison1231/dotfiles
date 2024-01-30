@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
--- Quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without copy" })
 
 -- Disable arrow keys
 map("n", "<Up>", "<NOP>")
@@ -16,15 +16,16 @@ map("n", "-", "<C-x>")
 -- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
--- Save
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz", { desc = "Keeps cursor centered when down a paje" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Keeps cursor centered when up a page" })
 
 -- Save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save current file" })
+map({ "i", "x", "n", "s" }, "<C-S>", "<cmd>wa<cr><esc>", { desc = "Save all file" })
 
 -- Copy
-map("n", "<C-c>", "yy")
+map("n", "<C-c>", "yy", { desc = "Copy" })
 map("v", "<C-c>", "y")
 map("n", "<C-v>", "p")
 
@@ -80,3 +81,9 @@ map("n", "<leader>cr", "<Cmd>Lspsaga rename<cr>", opts)
 
 -- Mason
 map("n", "<leader>cm", "<Cmd>Mason<cr>", opts)
+
+-- Copy file paths
+map("n", "<leader>cp", '<cmd>let @+ = expand("%")<cr>', { desc = "Copy File Name" })
+map("n", "<leader>cf", '<cmd>let @+ = expand("%:p")<cr>', { desc = "Copy File Path" })
+
+map("n", "<leader>rs", vim.cmd.LspRestart, { desc = "Restart LSP" })
