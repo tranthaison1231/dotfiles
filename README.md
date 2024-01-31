@@ -53,7 +53,7 @@ cd ~/.config
 - https://github.dev/ecosse3/nvim
 - https://github.com/mischavandenburg/dotfiles
 - https://github.com/louishuyng/dotfiles
-- https://github.com/immint023/dotfiles
+- https://github.dev/immint023/dotfiles
 - https://github.com/chau-bao-long/dotfiles
 - https://github.com/theopn/dotfiles
 - https://github.com/pysan3/dotfiles

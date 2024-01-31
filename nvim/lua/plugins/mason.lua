@@ -5,7 +5,6 @@ return {
       ensure_installed = {
         "stylua",
         "eslint_d",
-        "prettier",
         "prettierd",
         "codespell",
         "misspell",
