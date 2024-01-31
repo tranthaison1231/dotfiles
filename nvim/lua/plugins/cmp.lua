@@ -10,7 +10,6 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-calc",
       {
         "L3MON4D3/LuaSnip",
         dependencies = {
@@ -109,7 +108,6 @@ return {
           { name = "nvim_lua", priority = 5 },
           { name = "path", priority = 5 },
           { name = "cmd-line" },
-          { name = "calc", priority = 3 },
         }),
         experimental = {
           ghost_text = {
