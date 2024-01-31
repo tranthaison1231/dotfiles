@@ -86,7 +86,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "copilot", priority = 10, max_item_count = 3 },
-          { name = "nvim_lsp", priority = 10 },
+          { name = "nvim_lsp", priority = 9 },
           {
             name = "buffer",
             priority = 7,
@@ -102,14 +102,13 @@ return {
               end,
             },
           },
-          { name = "cmp_tabnine", priority = 7 },
           {
             name = "luasnip",
-            priority = 7,
+            priority = 6,
             max_item_count = 5,
           },
           { name = "nvim_lua", priority = 5 },
-          { name = "path", priority = 4 },
+          { name = "path", priority = 5 },
           { name = "cmd-line" },
           { name = "calc", priority = 3 },
         }),
