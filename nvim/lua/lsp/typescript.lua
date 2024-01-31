@@ -20,6 +20,11 @@ lsp_config.tsserver.setup({
     ts_utils.setup_client(client)
   end,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+  settings = {
+    completions = {
+      completeFunctionCalls = true,
+    },
+  },
   root_dir = function()
     return vim.fn.getcwd()
   end,
