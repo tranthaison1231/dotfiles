@@ -4,15 +4,12 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "eslint_d",
         "prettierd",
         "codespell",
         "misspell",
         "cspell",
         "markdownlint",
         "marksman",
-        "js-debug-adapter",
-        "astro-language-server",
       },
     },
   },
