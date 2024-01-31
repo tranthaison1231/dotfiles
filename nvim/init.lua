@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("config.options")
 require("lazy").setup({
   spec = { { import = "plugins" } },
-  checker = { enabled = false }, -- automatically check for plugin updates
+  checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     cache = {
       enabled = true,
