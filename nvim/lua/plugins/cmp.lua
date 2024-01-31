@@ -11,7 +11,6 @@ return {
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-calc",
-      "L3MON4D3/LuaSnip",
       {
         "L3MON4D3/LuaSnip",
         dependencies = {
@@ -86,12 +85,12 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "copilot", priority = 10, max_item_count = 3 },
-          { name = "nvim_lsp", priority = 9 },
+          { name = "nvim_lsp", priority = 9, max_item_count = 10 },
           {
             name = "buffer",
             priority = 7,
             keyword_length = 5,
-            max_item_count = 10,
+            max_item_count = 3,
             option = {
               get_bufnrs = function()
                 local bufs = {}
