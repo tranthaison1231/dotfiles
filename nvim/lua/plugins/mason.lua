@@ -4,7 +4,6 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
-        "prettierd",
         "codespell",
         "misspell",
         "cspell",
