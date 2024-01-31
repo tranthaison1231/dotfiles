@@ -83,7 +83,11 @@ map("n", "<leader>cr", "<Cmd>Lspsaga rename<cr>", opts)
 map("n", "<leader>cm", "<Cmd>Mason<cr>", opts)
 
 -- Copy file paths
-map("n", "<leader>cp", '<cmd>let @+ = expand("%")<cr>', { desc = "Copy File Name" })
-map("n", "<leader>cf", '<cmd>let @+ = expand("%:p")<cr>', { desc = "Copy File Path" })
+map("n", "<leader>cp", '<Cmd>let @+ = expand("%")<cr>', { desc = "Copy File Name" })
+map("n", "<leader>cf", '<Cmd>let @+ = expand("%:p")<cr>', { desc = "Copy File Path" })
 
 map("n", "<leader>rs", vim.cmd.LspRestart, { desc = "Restart LSP" })
+
+-- Git conflicts
+map("n", "<leader>gl", "<Cmd>GitConflictListQf<cr>", { desc = "List Conflict" })
+map("n", "<leader>gr", "<Cmd>GitConflictRefresh<cr>", { desc = "Refresh Git Conflict" })
