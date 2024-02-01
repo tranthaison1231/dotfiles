@@ -20,6 +20,26 @@ autocmd("LspAttach", {
     end, opts)
     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "<leader>ce", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>co", function()
+        vim.lsp.buf.code_action({
+          apply = true,
+          context = {
+            only = { "source.organizeImports.ts" },
+            diagnostics = {},
+          },
+        })
+      end,
+      opts)
+    vim.keymap.set("n", "<leader>cR", function()
+        vim.lsp.buf.code_action({
+          apply = true,
+          context = {
+            only = { "source.removeUnused.ts" },
+            diagnostics = {},
+          },
+        })
+      end,
+      opts)
   end,
 })
 
