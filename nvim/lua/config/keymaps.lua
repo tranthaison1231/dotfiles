@@ -30,8 +30,8 @@ map("v", "<C-c>", "y")
 map("n", "<C-v>", "p")
 
 -- Move code
-map("v", "<M-j>", ":m '>+1<CR>gv=gv")
-map("v", "<M-k>", ":m '<-2<CR>gv=gv")
+map("v", "<M-j>", "<cmd>m '>+1<CR>gv=gv<CR>")
+map("v", "<M-k>", "<cmd>m '<-2<CR>gv=gv<CR>")
 
 -- Google Search
 local searching_google_in_normal =
