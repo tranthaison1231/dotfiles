@@ -90,7 +90,7 @@ config.colors = {
 	},
 }
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 1
 
 -- Shoundn't confirm when close
 config.keys = {

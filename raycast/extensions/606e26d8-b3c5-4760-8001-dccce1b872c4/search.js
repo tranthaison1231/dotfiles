@@ -141,6 +141,9 @@ function print() { __p += __j.call(arguments, '') }
     return _output
   `);return t?JSON.parse(t):void 0}function p6(e,t,i=!1){return _a(`
     tell application "Arc"
+    if (count of windows) is 0 then
+    make new window
+  end if
       set tabIndex to 1
       repeat with aTab in every tab of first window
         if id of aTab is "${e.id}" then

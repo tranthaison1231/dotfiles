@@ -2,31 +2,41 @@ return {
   { "folke/neodev.nvim", opts = {} },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
       require("neodev").setup({})
-      require("lsp")
-    end,
-  },
-  {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = function()
-      require("lspsaga").setup({
-        symbol_in_winbar = {
-          enable = false,
+      require("mason").setup({
+        ensure_installed = {
+          "stylua",
+          "codespell",
+          "misspell",
+          "cspell",
+          "markdownlint",
+          "marksman",
         },
-        ui = {
-          border = "rounded",
+      })
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "solidity",
+          "prismals",
+          "tsserver",
+          "eslint",
+          "lua_ls",
         },
-        beacon = {
-          enable = false,
+        handlers = {
+          function(server_name)
+            local lspconfig = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            lspconfig[server_name].setup({
+              capabilities = capabilities,
+            })
+          end,
         },
       })
     end,
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
   },
   {
     "toppair/peek.nvim",

@@ -126,6 +126,9 @@ ${r.message}`:W,F=[U,p,e].filter(Boolean).join(`
     return _output
   `);return p?JSON.parse(p):void 0}function Ji(e,p,d=!1){return ta(`
     tell application "Arc"
+    if (count of windows) is 0 then
+    make new window
+  end if
       set tabIndex to 1
       repeat with aTab in every tab of first window
         if id of aTab is "${e.id}" then
