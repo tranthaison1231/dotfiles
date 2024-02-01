@@ -91,3 +91,5 @@ map("n", "<leader>rs", vim.cmd.LspRestart, { desc = "Restart LSP" })
 -- Git conflicts
 map("n", "<leader>gl", "<Cmd>GitConflictListQf<cr>", { desc = "List Conflict" })
 map("n", "<leader>gr", "<Cmd>GitConflictRefresh<cr>", { desc = "Refresh Git Conflict" })
+
+map("n", "gx", [[:execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]], { desc = "Open link" })
