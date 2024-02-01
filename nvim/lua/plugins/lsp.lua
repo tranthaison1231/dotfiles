@@ -5,9 +5,11 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "nvimdev/lspsaga.nvim",
     },
     config = function()
       require("neodev").setup({})
+      require("lspsaga").setup({})
       require("mason").setup({
         ensure_installed = {
           "stylua",
