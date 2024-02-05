@@ -12,6 +12,8 @@ return {
           null_ls.builtins.completion.spell,
           null_ls.builtins.diagnostics.markdownlint,
           null_ls.builtins.diagnostics.codespell,
+          null_ls.builtins.formatting.goimports_reviser,
+          null_ls.builtins.formatting.golines,
         },
       })
     end,
