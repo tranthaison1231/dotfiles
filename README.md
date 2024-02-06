@@ -48,6 +48,7 @@ cd ~/.config
 - https://github.com/LazyVim/LazyVim
 - https://github.com/NvChad/NvChad
 - https://github.com/jamestrew/nvim
+- https://github.com/dmmulroy/kickstart.nix 
 - https://github.com/AlejandroSuero/.config
 - https://github.com/badele/vide
 - https://github.dev/ecosse3/nvim
