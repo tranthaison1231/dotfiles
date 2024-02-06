@@ -19,10 +19,23 @@ return {
           vim.cmd("startinsert!")
           vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
         end,
-        on_close = function(term)
+        on_close = function()
           vim.cmd("startinsert!")
         end,
       })
+
+      local normal = Terminal:new({})
+
+      function normal_toggle()
+        normal:toggle()
+      end
+
+      vim.api.nvim_set_keymap(
+        "n",
+        "<leader>`",
+        "<cmd>lua normal_toggle()<CR>",
+        { noremap = true, silent = true, desc = "Terminal toggle" }
+      )
 
       function lazygit_toggle()
         lazygit:toggle()
