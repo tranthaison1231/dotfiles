@@ -29,6 +29,7 @@ install_tools() {
 		brew install --cask wezterm
 		brew install tmux
 		brew install neovim
+    brew install gnu-sed
 		brew install diff-so-fancy
 		brew install fzf
 		brew install lua
