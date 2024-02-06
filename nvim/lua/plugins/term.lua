@@ -24,19 +24,6 @@ return {
         end,
       })
 
-      local normal = Terminal:new({})
-
-      function normal_toggle()
-        normal:toggle()
-      end
-
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>`",
-        "<cmd>lua normal_toggle()<CR>",
-        { noremap = true, silent = true, desc = "Terminal toggle" }
-      )
-
       function lazygit_toggle()
         lazygit:toggle()
       end
