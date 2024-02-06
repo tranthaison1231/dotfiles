@@ -127,6 +127,10 @@ return {
             },
           }),
         },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         sorting = defaults.sorting,
         performance = {
           max_view_entries = 100,
