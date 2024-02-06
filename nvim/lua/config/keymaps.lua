@@ -65,7 +65,7 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 -- Trouble
 map("n", "<leader>xx", function()
   require("trouble").toggle()
-end)
+end, { desc = "Trouble" })
 
 -- Toggle Terms
 map("t", "<esc>", [[<C-\><C-n>]], opts)
