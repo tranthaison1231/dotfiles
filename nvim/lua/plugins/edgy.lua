@@ -23,6 +23,13 @@ return {
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
       },
+      {
+        wo = {
+          winbar = false,
+        },
+        ft = "spectre_panel",
+        size = { height = 0.4 },
+      },
     },
     left = {
       {
