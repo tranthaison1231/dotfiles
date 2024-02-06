@@ -10,6 +10,7 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
+      "onsails/lspkind.nvim",
       {
         "L3MON4D3/LuaSnip",
         dependencies = {
@@ -36,6 +37,7 @@ return {
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
 
       local defaults = require("cmp.config.default")()
       return {
@@ -113,6 +115,17 @@ return {
           ghost_text = {
             hl_group = "CmpGhostText",
           },
+        },
+        formatting = {
+          expandable_indicator = true,
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            ellipsis_char = "...",
+            symbol_map = {
+              Copilot = "",
+            },
+          }),
         },
         sorting = defaults.sorting,
         performance = {
