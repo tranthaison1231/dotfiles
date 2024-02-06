@@ -13,6 +13,7 @@
   "cspell.nvim": { "branch": "main", "commit": "2e65904243f41b9002618d1fe0d79def6c795eeb" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "dracula.nvim": { "branch": "main", "commit": "a6cb758d4b182d9f2b7e742910078d94877c1059" },
+  "edgy.nvim": { "branch": "main", "commit": "0b35dc6da4cae6cc2f724bc610eadf955cd2319b" },
   "friendly-snippets": { "branch": "main", "commit": "b8fae73a479ae0a1c54f5c98fa687ae8a0addc53" },
   "git-conflict.nvim": { "branch": "main", "commit": "4c8e252b87d54d944c1e56bfb477f78b6fdaf661" },
   "gitsigns.nvim": { "branch": "main", "commit": "2c2463dbd82eddd7dbab881c3a62cfbfbe3c67ae" },
