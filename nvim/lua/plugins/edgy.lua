@@ -18,7 +18,7 @@ return {
         wo = {
           winbar = false,
         },
-        size = { height = 0.28 },
+        size = { height = 0.25 },
         filter = function(buf, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,

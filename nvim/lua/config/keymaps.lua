@@ -101,4 +101,4 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 })
 
 -- Toggle Term
-map("n", "<leader>`", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+map("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
