@@ -4,7 +4,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   group = "neotree_autoopen",
   callback = function()
     if not vim.g.neotree_opened then
-      vim.cmd("ToggleTerm")
       vim.cmd("Neotree show")
       vim.g.neotree_opened = true
     end

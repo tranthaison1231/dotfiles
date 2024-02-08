@@ -21,6 +21,8 @@ return {
         end,
         on_close = function()
           vim.cmd("startinsert!")
+          require("neo-tree.sources.manager").refresh("filesystem")
+          require("neo-tree.events").fire_event("git_event")
         end,
       })
 
