@@ -63,7 +63,8 @@ return {
             vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
           end
 
-          map("n", "<leader>ph", gs.preview_hunk)
+          map("n", "<leader>ph", gs.preview_hunk, "Preview hunk")
+          map("n", "<leader>phi", gs.preview_hunk_inline, "Preview hunk inline")
         end,
       })
     end,
