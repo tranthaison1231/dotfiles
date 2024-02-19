@@ -67,13 +67,17 @@ function print() { __p += __j.call(arguments, '') }
     LIMIT ${t};
   `}var va=require("@raycast/api");var L0=require("@raycast/api"),DN=(0,L0.getPreferenceValues)(),x1=(0,L0.getPreferenceValues)(),CN=(0,L0.getPreferenceValues)();function Sr(e){try{return new URL(e).hostname.replace("www.","")}catch(t){console.error(t);return}}function w5(e){let t=new Date(e.lastVisitedAt);return{date:t,tooltip:`Last visited: ${t.toLocaleString()}`}}function xr(e){return e.title||`Space ${e.id}`}function _5(e){return`${e.id}`}function b5(){return["topApp","pinned","unpinned"]}function y5(e){switch(e){case"topApp":return x1.showFavorites;case"pinned":return x1.showPinnedTabs;case"unpinned":return x1.showUnpinnedTabs}}function S5(e){switch(e){case"topApp":return"Favorites";case"pinned":return"Pinned Tabs";case"unpinned":return"Unpinned Tabs"}}function x5(e){if(e)return e.length===1?"1 tab":`${e.length} tabs`}function Er(e){return!!(e&&e.id&&e.url&&e.title&&e.location)}function E5(e){if(e)return e.length===1?"1 entry":`${e.length} entries`}async function nt(e,t){e&&va.environment.launchType!=="background"&&await(0,va.showToast)({style:va.Toast.Style.Failure,title:t?.title??"Something went wrong",message:t?.message??(e instanceof Error?e.message:String(e)),primaryAction:{title:"Copy Error",async onAction(i){let d=e instanceof Error&&(e?.stack||e?.message)||String(e);await va.Clipboard.copy(d),await i.hide()}}})}var ft=require("@raycast/api"),l7=B1(Xt()),o7=require("path"),n6=B1(ys());var Ql=B1(require("node:process"),1),e7=B1(Jl(),1);async function _a(e,{humanReadableOutput:t=!0}={}){if(Ql.default.platform!=="darwin")throw new Error("macOS only");let i=t?[]:["-ss"],{stdout:d}=await(0,e7.default)("osascript",["-e",e,i]);return d}async function a7(){let e=await _a(`
     on escape_value(this_text)
+      set AppleScript's text item delimiters to the "\\\\"
+      set the item_list to every text item of this_text
+      set AppleScript's text item delimiters to "\\\\\\\\"
+      set this_text to the item_list as string
       set AppleScript's text item delimiters to the "\\""
       set the item_list to every text item of this_text
       set AppleScript's text item delimiters to the "\\\\\\""
       set this_text to the item_list as string
       set AppleScript's text item delimiters to ""
       return this_text
-    end replace_chars
+    end escape_value
 
     set _output to ""
 
