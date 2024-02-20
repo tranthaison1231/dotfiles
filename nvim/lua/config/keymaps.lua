@@ -16,6 +16,9 @@ map("n", "-", "<C-x>")
 -- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
+-- Cut
+map("n", "<C-x>", "dd", { desc = "Cut" })
+
 map("n", "<C-d>", "<C-d>zz", { desc = "Keeps cursor centered when down a paje" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Keeps cursor centered when up a page" })
 
