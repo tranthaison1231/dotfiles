@@ -50,6 +50,7 @@ cd ~/.config
 - https://github.com/jamestrew/nvim
 - https://github.com/dmmulroy/kickstart.nix 
 - https://github.com/AlejandroSuero/.config
+- https://github.com/a7lavinraj/dotfiles
 - https://github.com/badele/vide
 - https://github.dev/ecosse3/nvim
 - https://github.com/mischavandenburg/dotfiles
