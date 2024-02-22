@@ -3,8 +3,11 @@ local util = require("util/root")
 return {
   {
     "sindrets/diffview.nvim",
-    opts = { enhanced_diff_hl = false },
     config = function()
+      vim.cmd([[highlight DiffAdd guifg=none guibg=#003500]])
+      vim.cmd([[highlight DiffDelete guifg=none guibg=#5e0000]])
+      vim.cmd([[highlight DiffChange guifg=none guibg=#003500]])
+
       vim.api.nvim_create_user_command("DiffViewToggle", function()
         if require("diffview.lib").get_current_view() then
           vim.cmd(":DiffviewClose")
