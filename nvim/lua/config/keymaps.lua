@@ -105,3 +105,9 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 
 -- Toggle Term
 map("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+
+-- Vim fugitive
+map("n", "<leader>gv", "<cmd>Gvdiffsplit<cr>", { desc = "Git Diff Split" })
+
+-- Exit
+map("n", "<leader>q", "<cmd>exit<cr>", { desc = "Exit" })

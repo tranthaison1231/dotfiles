@@ -2,6 +2,9 @@ local util = require("util/root")
 
 return {
   {
+    "tpope/vim-fugitive",
+  },
+  {
     "sindrets/diffview.nvim",
     opts = { enhanced_diff_hl = false },
     config = function()
