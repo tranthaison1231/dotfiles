@@ -4,9 +4,9 @@ return {
   {
     "sindrets/diffview.nvim",
     config = function()
-      vim.cmd([[highlight DiffAdd guifg=none guibg=#003500]])
+      vim.cmd([[highlight DiffViewDiffAdd guifg=none guibg=#003500]])
       vim.cmd([[highlight DiffDelete guifg=none guibg=#5e0000]])
-      vim.cmd([[highlight DiffChange guifg=none guibg=#003500]])
+      vim.cmd([[highlight DiffChange guifg=none guibg=#3a3a00]])
 
       vim.api.nvim_create_user_command("DiffViewToggle", function()
         if require("diffview.lib").get_current_view() then
