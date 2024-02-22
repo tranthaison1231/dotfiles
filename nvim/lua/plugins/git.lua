@@ -1,4 +1,4 @@
-local util = require("util/root")
+cal util = require("util/root")
 
 return {
   {
@@ -9,7 +9,7 @@ return {
         if require("diffview.lib").get_current_view() then
           vim.cmd(":DiffviewClose")
         else
-          vim.cmd(vim.fn.input({ prompt = "", default = ":DiffviewOpen " }))
+          vim.cmd(":DiffviewOpen")
         end
       end, {})
     end,
