@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without copy" })
-
+map("n", "<leader>l", "<cmd>noh<CR>", { desc = "Clear highlights" })
 -- Disable arrow keys
 map("n", "<Up>", "<NOP>")
 map("n", "<Down>", "<NOP>")
