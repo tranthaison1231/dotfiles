@@ -135,24 +135,11 @@ end, { desc = "Fuzzily search in current buffer]" })
 
 map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 
-map("n", "<leader>gf", function()
-  local cmd = {
-    "sort",
-    "-u",
-    "<(git diff --name-only --cached)",
-    "<(git diff --name-only)",
-    "<(git diff --name-only --diff-filter=U)",
-  }
-
-  if not util.is_inside_git_repo() then
-    vim.notify(
-      "Current project is not a git directory",
-      vim.log.levels.WARN,
-      { title = "Telescope Git Files", git_command = cmd }
-    )
-  else
-    require("telescope.builtin").git_files()
-  end
-end, { desc = "Search [G]it [F]iles" })
+map(
+  "n",
+  "<leader>gf",
+  "<cmd>Telescope changed_files<cr>",
+  { noremap = true, silent = true, desc = "Search [G]it [F]iles" }
+)
 
 map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { desc = "Live Grep", noremap = true, silent = true })

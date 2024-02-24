@@ -5,10 +5,14 @@ return {
     lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "axkirillov/telescope-changed-files",
     },
     keys = {
       { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
     },
+    config = function()
+      require("telescope").load_extension("changed_files")
+    end,
   },
   {
     "princejoogie/dir-telescope.nvim",
