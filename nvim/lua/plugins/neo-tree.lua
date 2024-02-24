@@ -12,6 +12,10 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
 return {
   {
+    "ThePrimeagen/harpoon",
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
