@@ -155,4 +155,4 @@ map("n", "<leader>gf", function()
   end
 end, { desc = "Search [G]it [F]iles" })
 
-map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { desc = "Live Grep" })
+map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { desc = "Live Grep", noremap = true, silent = true })
