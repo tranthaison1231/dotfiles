@@ -125,6 +125,8 @@ map("n", "<leader>ss", function()
   }))
 end, { desc = "Search Spelling suggestions" })
 
+map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true, desc = "Grep in Directory" })
+
 map("n", "<leader>f", function()
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
     previewer = false,
