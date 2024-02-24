@@ -117,3 +117,16 @@ end, { noremap = true, silent = true, desc = "Add file to harpoon" })
 map("n", "<leader>hm", function()
   require("harpoon.ui").toggle_quick_menu()
 end, { noremap = true, silent = true, desc = "Toggle Harpoon Menu" })
+
+-- Telescope
+map("n", "<leader>ss", function()
+  require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown({
+    previewer = false,
+  }))
+end, { desc = "Search Spelling suggestions" })
+
+map("n", "<leader>f", function()
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    previewer = false,
+  }))
+end, { desc = "[/] Fuzzily search in current buffer]" })
