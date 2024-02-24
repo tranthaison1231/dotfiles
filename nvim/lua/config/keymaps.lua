@@ -130,3 +130,5 @@ map("n", "<leader>f", function()
     previewer = false,
   }))
 end, { desc = "[/] Fuzzily search in current buffer]" })
+
+map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
