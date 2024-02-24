@@ -76,7 +76,7 @@ end, { desc = "Trouble" })
 map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Terminal" })
 map("n", "<leader>tt", function()
   vim.cmd("ToggleTerm")
-end)
+end, { desc = "ToggleTerm" })
 
 -- Diagnostic
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
