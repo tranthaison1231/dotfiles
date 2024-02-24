@@ -131,7 +131,7 @@ map("n", "<leader>f", function()
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
     previewer = false,
   }))
-end, { desc = "[/] Fuzzily search in current buffer]" })
+end, { desc = "Fuzzily search in current buffer]" })
 
 map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 
