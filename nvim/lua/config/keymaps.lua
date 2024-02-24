@@ -154,3 +154,5 @@ map("n", "<leader>gf", function()
     require("telescope.builtin").git_files()
   end
 end, { desc = "Search [G]it [F]iles" })
+
+map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { desc = "Live Grep" })
