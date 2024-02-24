@@ -71,7 +71,7 @@ map("n", "<leader>xx", function()
 end, { desc = "Trouble" })
 
 -- Toggle Terms
-map("t", "<esc>", [[<C-\><C-n>]], opts)
+map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Terminal" })
 map("n", "<leader>tt", function()
   vim.cmd("ToggleTerm")
 end)
@@ -80,10 +80,10 @@ end)
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
 -- Rename
-map("n", "<leader>cr", "<Cmd>Lspsaga rename<cr>", opts)
+map("n", "<leader>cr", "<Cmd>Lspsaga rename<cr>", { desc = "Rename" })
 
 -- Mason
-map("n", "<leader>cm", "<Cmd>Mason<cr>", opts)
+map("n", "<leader>cm", "<Cmd>Mason<cr>", { desc = "Mason" })
 
 -- Copy file paths
 map("n", "<leader>cp", '<Cmd>let @+ = expand("%")<cr>', { desc = "Copy File Name" })
