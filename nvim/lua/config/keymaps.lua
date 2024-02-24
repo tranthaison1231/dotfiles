@@ -135,11 +135,4 @@ end, { desc = "Fuzzily search in current buffer]" })
 
 map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 
-map(
-  "n",
-  "<leader>gf",
-  "<cmd>Telescope changed_files<cr>",
-  { noremap = true, silent = true, desc = "Search [G]it [F]iles" }
-)
-
 map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { desc = "Live Grep", noremap = true, silent = true })
