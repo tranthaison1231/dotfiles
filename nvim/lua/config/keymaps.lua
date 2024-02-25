@@ -13,28 +13,21 @@ map("n", "<Right>", "<NOP>")
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
 
--- Select all
-map("n", "<C-a>", "gg<S-v>G")
+map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 
--- Cut
-map("n", "<C-x>", "dd", { desc = "Cut" })
-
-map("n", "<C-d>", "<C-d>zz", { desc = "Keeps cursor centered when down a paje" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Keeps cursor centered when down a page" })
 map("n", "<C-u>", "<C-u>zz", { desc = "Keeps cursor centered when up a page" })
-
--- Save file
 
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save current file" })
 map({ "i", "x", "n", "s" }, "<C-S>", "<cmd>wa<cr><esc>", { desc = "Save all file" })
 
--- Copy
-map("n", "<C-c>", "yy", { desc = "Copy" })
-map("v", "<C-c>", "y")
-map("n", "<C-v>", "p")
+map("n", "<C-x>", "dd", { desc = "Cut" })
+map("n", "<C-c>", "yy", { desc = "Copy current line" })
+map("v", "<C-c>", "y", { desc = "Copy" })
+map("n", "<C-v>", "p", { desc = "Paste" })
 
--- Move code
-map("v", "<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down" })
-map("v", "<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move line up" })
+map("v", "<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move line up", silent = true })
+map("v", "<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down", silent = true })
 
 -- Google Search
 local searching_google_in_normal =

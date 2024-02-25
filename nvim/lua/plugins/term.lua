@@ -8,28 +8,6 @@ return {
         shade_terminals = false,
       })
       local Terminal = require("toggleterm.terminal").Terminal
-      local lazygit = Terminal:new({
-        cmd = "lazygit",
-        dir = "git_dir",
-        direction = "float",
-        float_opts = {
-          border = "curved",
-          width = 9999,
-          height = 9999,
-        },
-        on_open = function(term)
-          vim.cmd("startinsert!")
-          vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-        end,
-        on_close = function()
-          vim.cmd("startinsert!")
-        end,
-        on_exit = function()
-          require("neo-tree.sources.manager").refresh("filesystem")
-          require("neo-tree.sources.manager").refresh("git_status")
-          require("neo-tree.sources.manager").refresh("buffers")
-        end,
-      })
 
       function LazygitEdit(original_buffer)
         ---@diagnostic disable-next-line: param-type-mismatch
@@ -41,8 +19,8 @@ return {
           return
         end
 
-        vim.fn.chansend(channel_id, "\15") -- \15 is <c-o>
-        vim.cmd("close") -- Close Lazygit
+        vim.fn.chansend(channel_id, "\15")
+        vim.cmd("close")
 
         local relative_filepath = util.getRelativeFilepath(5, 50)
         if not relative_filepath then
@@ -60,6 +38,30 @@ return {
         vim.fn.win_gotoid(winid)
         vim.cmd("e " .. relative_filepath)
       end
+
+      local lazygit = Terminal:new({
+        cmd = "lazygit",
+        dir = "git_dir",
+        direction = "float",
+        float_opts = {
+          border = "curved",
+          width = 9999,
+          height = 9999,
+        },
+        on_open = function(term)
+          vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", "<esc>", { noremap = true, silent = true })
+
+          vim.cmd("startinsert!")
+        end,
+        on_close = function()
+          vim.cmd("startinsert!")
+        end,
+        on_exit = function()
+          require("neo-tree.sources.manager").refresh("filesystem")
+          require("neo-tree.sources.manager").refresh("git_status")
+          require("neo-tree.sources.manager").refresh("buffers")
+        end,
+      })
 
       function lazygit_open()
         local current_buffer = vim.api.nvim_get_current_buf()
