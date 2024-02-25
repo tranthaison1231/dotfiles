@@ -63,12 +63,6 @@ map("n", "<leader>xx", function()
   require("trouble").toggle()
 end, { desc = "Trouble" })
 
--- Toggle Terms
-map("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Terminal" })
-map("n", "<leader>tt", function()
-  vim.cmd("ToggleTerm")
-end, { desc = "ToggleTerm" })
-
 -- Diagnostic
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 
@@ -95,9 +89,6 @@ map("n", "<leader>S", "<cmd>lua require('spectre').toggle()<cr>", { desc = "Togg
 map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
   desc = "Search on current file",
 })
-
--- Toggle Term
-map("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
 
 -- Exit
 map("n", "<leader>q", "<cmd>exit<cr>", { desc = "Exit" })

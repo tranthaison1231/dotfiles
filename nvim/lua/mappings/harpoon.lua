@@ -1,6 +1,5 @@
 local map = vim.keymap.set
 
--- Harpoon
 map("n", "<leader>ha", function()
   require("harpoon.mark").add_file()
 end, { noremap = true, silent = true, desc = "Add file to harpoon" })
