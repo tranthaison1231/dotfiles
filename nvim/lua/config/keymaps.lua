@@ -33,8 +33,8 @@ map("v", "<C-c>", "y")
 map("n", "<C-v>", "p")
 
 -- Move code
-map("v", "<M-j>", "<cmd>m '>+1<CR>gv=gv<CR>")
-map("v", "<M-k>", "<cmd>m '<-2<CR>gv=gv<CR>")
+map("v", "<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down" })
+map("v", "<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move line up" })
 
 -- Google Search
 local searching_google_in_normal =
@@ -148,3 +148,10 @@ map(
   "<cmd>lua require('util.telescope').git_commits()<CR>",
   { silent = true, desc = "Git Commits", noremap = true }
 )
+
+-- Move block
+map("n", "<tab>", ">>", { desc = "Move block right" })
+map("n", "<s-tab>", "<<", { desc = "Move block left" })
+map("v", "<tab>", ">gv", { desc = "Move block right" })
+map("v", "<s-tab>", "<gv", { desc = "Move block left" })
+map("i", "<S-Tab>", "<C-\\><C-N><<<C-\\><C-N>^i", { desc = "Move block left" })
