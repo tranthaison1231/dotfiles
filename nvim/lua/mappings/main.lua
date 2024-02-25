@@ -84,12 +84,6 @@ map("n", "<leader>gr", "<Cmd>GitConflictRefresh<cr>", { desc = "Refresh Git Conf
 
 map("n", "gx", "<cmd> execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>", { desc = "Open link" })
 
--- Spectre
-map("n", "<leader>S", "<cmd>lua require('spectre').toggle()<cr>", { desc = "Toggle Spectre" })
-map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-  desc = "Search on current file",
-})
-
 -- Exit
 map("n", "<leader>q", "<cmd>exit<cr>", { desc = "Exit" })
 
