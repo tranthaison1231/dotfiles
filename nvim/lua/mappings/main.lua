@@ -102,49 +102,15 @@ map("n", "<leader>t", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
 -- Exit
 map("n", "<leader>q", "<cmd>exit<cr>", { desc = "Exit" })
 
--- Harpoon
-map("n", "<leader>ha", function()
-  require("harpoon.mark").add_file()
-end, { noremap = true, silent = true, desc = "Add file to harpoon" })
-
-map("n", "<leader>hm", function()
-  require("harpoon.ui").toggle_quick_menu()
-end, { noremap = true, silent = true, desc = "Toggle Harpoon Menu" })
-
--- Telescope
-map("n", "<leader>ss", function()
-  require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown({
-    previewer = false,
-  }))
-end, { desc = "Search Spelling suggestions" })
-
-map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true, desc = "Grep in Directory" })
-
-map("n", "<leader>f", function()
-  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    previewer = false,
-  }))
-end, { desc = "Fuzzily search in current buffer]" })
-
-map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-
-map(
-  "n",
-  "<leader>gs",
-  "<cmd>lua require('util.telescope').git_status()<CR>",
-  { silent = true, desc = "Git status", noremap = true }
-)
-
-map(
-  "n",
-  "<leader>gc",
-  "<cmd>lua require('util.telescope').git_commits()<CR>",
-  { silent = true, desc = "Git Commits", noremap = true }
-)
-
 -- Move block
 map("n", "<tab>", ">>", { desc = "Move block right" })
 map("n", "<s-tab>", "<<", { desc = "Move block left" })
 map("v", "<tab>", ">gv", { desc = "Move block right" })
 map("v", "<s-tab>", "<gv", { desc = "Move block left" })
 map("i", "<S-Tab>", "<C-\\><C-N><<<C-\\><C-N>^i", { desc = "Move block left" })
+
+-- Search
+map("v", "/", 'y/<C-R>"<CR>N', { silent = true, desc = "Search selected text" })
+
+-- Eslint
+map("n", "<leader>ff", ":EslintFixAll <CR>", { silent = true, desc = "Fix all eslint errors" })
