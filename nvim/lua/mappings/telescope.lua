@@ -1,3 +1,5 @@
+local telescope_builtin = require("telescope.builtin")
+
 local map = vim.keymap.set
 
 map("n", "<leader>ss", function()
@@ -14,7 +16,23 @@ map("n", "<C-f>", function()
   }))
 end, { desc = "Fuzzily search in current buffer]" })
 
-map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "Find recently opened files" })
+
+map("n", "<leader>fb", function()
+  telescope_builtin.buffers({
+    show_all_buffers = true,
+    sort_lastused = true,
+    ignore_current_buffer = true,
+  })
+end, { silent = true, desc = "Find Buffers" })
+
+map("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+
+map("n", "<leader>fg", function()
+  telescope_builtin.live_grep({
+    find_command = { "rg", "--ignore", "--hidden", "--files" },
+  })
+end, { silent = true, desc = "Live Grep" })
 
 map(
   "n",
@@ -25,6 +43,7 @@ map(
 
 map("n", "gr", ":Telescope lsp_references <CR>", { silent = true, desc = "Telescope References" })
 
+map("n", "<leader>ma", ":Telescope marks <CR>", { silent = true })
 map("n", "<leader>gt", ":Telescope git_stash <CR>", { silent = true, desc = "Git stash" })
 map("n", "<leader>gb", ":Telescope git_branches <CR>", { silent = true, desc = "Git branch" })
 

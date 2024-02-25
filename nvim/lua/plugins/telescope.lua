@@ -6,9 +6,6 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    keys = {
-      { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-    },
   },
   {
     "princejoogie/dir-telescope.nvim",
