@@ -85,7 +85,7 @@ map("n", "<leader>gr", "<Cmd>GitConflictRefresh<cr>", { desc = "Refresh Git Conf
 map("n", "gx", "<cmd> execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>", { desc = "Open link" })
 
 -- Exit
-map("n", "<leader>q", "<cmd>exit<cr>", { desc = "Exit" })
+map("n", "<C-q>", "<cmd>exit<cr>", { desc = "Exit" })
 
 -- Move block
 map("n", "<tab>", ">>", { desc = "Move block right" })

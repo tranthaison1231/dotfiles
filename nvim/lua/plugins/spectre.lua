@@ -17,7 +17,7 @@ return {
         },
         mapping = {
           ["send_to_qf"] = {
-            map = "<C-q>",
+            map = "<leader>qf",
             cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
             desc = "send all items to quickfix",
           },
