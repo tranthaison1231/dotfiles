@@ -8,7 +8,7 @@ map("n", "<leader>ss", function()
   }))
 end, { desc = "Search Spelling suggestions" })
 
-map("n", "<leader>/", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true, desc = "Grep in Directory" })
+map("n", "<leader>fg", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true, desc = "Grep in Directory" })
 
 map("n", "<C-f>", function()
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
@@ -28,7 +28,7 @@ end, { silent = true, desc = "Find Buffers" })
 
 map("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
 
-map("n", "<leader>fg", function()
+map("n", "<leader>/", function()
   telescope_builtin.live_grep({
     find_command = { "rg", "--ignore", "--hidden", "--files" },
   })

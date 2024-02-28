@@ -99,3 +99,5 @@ map("v", "/", 'y/<C-R>"<CR>N', { silent = true, desc = "Search selected text" })
 
 -- Eslint
 map("n", "<leader>ff", ":EslintFixAll <CR>", { silent = true, desc = "Fix all eslint errors" })
+
+map("n", "<leader>sc", "<cmd>so %<cr>", { silent = true, desc = "Source current file" })
