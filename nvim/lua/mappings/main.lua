@@ -25,6 +25,7 @@ map("n", "<C-x>", "dd", { desc = "Cut" })
 map("n", "<C-c>", "yy", { desc = "Copy current line" })
 map("v", "<C-c>", "y", { desc = "Copy" })
 map("n", "<C-v>", "p", { desc = "Paste" })
+map("x", "<C-v>", "pgvye", { desc = "Paste" })
 
 map("v", "<M-j>", ":m '>+1<CR>gv=gv", { desc = "Move line up", silent = true })
 map("v", "<M-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down", silent = true })
