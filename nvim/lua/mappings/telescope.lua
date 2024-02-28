@@ -54,6 +54,6 @@ map(
   { silent = true, desc = "Git Commits", noremap = true }
 )
 
-vim.api.nvim_create_user_command("config", function()
+vim.api.nvim_create_user_command("Config", function()
   require("telescope.builtin").find_files({ cwd = "~/.config/nvim" })
 end, {})
