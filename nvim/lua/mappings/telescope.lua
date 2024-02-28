@@ -53,3 +53,7 @@ map(
   "<cmd>lua require('util.telescope').git_commits()<CR>",
   { silent = true, desc = "Git Commits", noremap = true }
 )
+
+vim.api.nvim_create_user_command("Config", function()
+  require("telescope.builtin").find_files({ cwd = "~/.config/nvim" })
+end, {})
