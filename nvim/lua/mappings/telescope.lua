@@ -54,6 +54,8 @@ map(
   { silent = true, desc = "Git Commits", noremap = true }
 )
 
-vim.api.nvim_create_user_command("Config", function()
+map("n", "<leader>nc", function()
   require("telescope.builtin").find_files({ cwd = "~/.config/nvim" })
-end, {})
+end, {
+  desc = "Find Neovim Config",
+})
