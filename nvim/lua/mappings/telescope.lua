@@ -18,6 +18,8 @@ end, { desc = "Fuzzily search in current buffer]" })
 
 map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "Find recently opened files" })
 
+map("n", "<leader>:", require("telescope.builtin").command_history, { desc = "Command history" })
+
 map("n", "<leader>fb", function()
   telescope_builtin.buffers({
     show_all_buffers = true,
