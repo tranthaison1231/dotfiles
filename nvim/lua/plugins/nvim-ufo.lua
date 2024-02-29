@@ -12,16 +12,11 @@ return {
             segments = {
               {
                 sign = {
-                  namespace = { "diagnostic" },
+                  name = { "Diagnostic" },
                   maxwidth = 1,
                   auto = true,
                 },
-              },
-              {
-                sign = {
-                  namespace = { "gitsign" },
-                  auto = true,
-                },
+                click = "v:lua.ScSa",
               },
               {
                 text = {
