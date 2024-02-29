@@ -10,15 +10,41 @@ return {
           require("statuscol").setup({
             relculright = true,
             segments = {
-              { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
               {
-                sign = { name = { "Diagnostic" }, maxwidth = 2, auto = true },
-                click = "v:lua.ScSa",
+                sign = {
+                  namespace = { "diagnostic" },
+                  maxwidth = 1,
+                  auto = true,
+                },
               },
-              { text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
               {
-                sign = { name = { ".*" }, maxwidth = 2, colwidth = 1, auto = true, wrap = true },
-                click = "v:lua.ScSa",
+                sign = {
+                  namespace = { "gitsign" },
+                  auto = true,
+                },
+              },
+              {
+                text = {
+                  function()
+                    return "%="
+                  end,
+                  builtin.foldfunc,
+                },
+                click = "v:lua.ScFa",
+                auto = true,
+              },
+              {
+                text = {
+                  function(args)
+                    return (args.relnum == 0) and " " or ""
+                  end,
+                },
+              },
+              {
+                text = {
+                  builtin.lnumfunc,
+                  " ",
+                },
               },
             },
           })
