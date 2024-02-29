@@ -9,37 +9,24 @@ return {
           local builtin = require("statuscol.builtin")
           require("statuscol").setup({
             relculright = true,
+            ft_ignore = { "neo-tree" },
             segments = {
               {
                 sign = {
                   name = { "Diagnostic" },
-                  maxwidth = 1,
-                  auto = true,
+                  colwidth = 1,
                 },
                 click = "v:lua.ScSa",
               },
               {
-                text = {
-                  function()
-                    return "%="
-                  end,
-                  builtin.foldfunc,
-                },
+                text = { "  ", builtin.lnumfunc },
+                condition = { true, builtin.not_empty },
+                click = "v:lua.ScLa",
+              },
+              {
+                text = { " ", builtin.foldfunc, " " },
+                condition = { true, builtin.not_empty },
                 click = "v:lua.ScFa",
-                auto = true,
-              },
-              {
-                text = {
-                  function(args)
-                    return (args.relnum == 0) and " " or ""
-                  end,
-                },
-              },
-              {
-                text = {
-                  builtin.lnumfunc,
-                  " ",
-                },
               },
             },
           })
