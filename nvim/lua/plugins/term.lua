@@ -7,11 +7,10 @@ return {
       require("toggleterm").setup({
         shade_terminals = false,
         auto_scroll = true,
+        start_in_insert = true,
         on_open = function()
           vim.opt.foldcolumn = "0"
           vim.opt.statuscolumn = ""
-
-          vim.cmd("startinsert!")
         end,
       })
       local Terminal = require("toggleterm.terminal").Terminal
@@ -55,13 +54,9 @@ return {
           width = 9999,
           height = 9999,
         },
+        start_in_insert = true,
         on_open = function(term)
           vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", "<esc>", { noremap = true, silent = true })
-
-          vim.cmd("startinsert!")
-        end,
-        on_close = function()
-          vim.cmd("startinsert!")
         end,
         on_exit = function()
           require("neo-tree.sources.manager").refresh("filesystem")
