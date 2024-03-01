@@ -7,6 +7,7 @@ return {
       require("toggleterm").setup({
         shade_terminals = false,
         on_open = function()
+          vim.opt.foldcolumn = "0"
           vim.opt.statuscolumn = ""
 
           vim.cmd("startinsert!")
