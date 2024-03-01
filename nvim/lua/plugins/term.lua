@@ -6,6 +6,11 @@ return {
     config = function()
       require("toggleterm").setup({
         shade_terminals = false,
+        on_open = function()
+          vim.opt.statuscolumn = "no"
+
+          vim.cmd("startinsert!")
+        end,
       })
       local Terminal = require("toggleterm.terminal").Terminal
 
