@@ -18,21 +18,21 @@ return {
         lualine_a = {
           { "mode", width = 3 },
         },
-        lualine_b = {
-          { "branch" },
-          { "diff" },
-        },
+        lualine_b = { "branch" },
         lualine_c = {
+          { "diagnostics" },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { "%f" },
         },
         lualine_x = {
-          { "macro" },
-          { "diagnostics" },
+          "fileformat",
+          "diff",
         },
         lualine_y = {
-          { "filetype", ts_icon = "" },
+          { "progress", separator = " ", padding = { left = 1, right = 1 } },
         },
       },
+      extensions = { "neo-tree", "lazy", "toggleterm" },
     },
   },
 }
