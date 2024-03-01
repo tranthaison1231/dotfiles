@@ -51,3 +51,12 @@ autocmd("BufWritePre", {
     end
   end,
 })
+
+autocmd("FileType", {
+  group = augroup("Spectre"),
+  pattern = "spectre_panel",
+  callback = function()
+    vim.opt_local.statuscolumn = ""
+    vim.opt_local.foldcolumn = "0"
+  end,
+})
