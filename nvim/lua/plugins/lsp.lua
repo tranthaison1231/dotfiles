@@ -9,7 +9,11 @@ return {
     },
     config = function()
       require("neodev").setup({})
-      require("lspsaga").setup({})
+      require("lspsaga").setup({
+        symbol_in_winbar = {
+          enable = true,
+        },
+      })
       require("mason").setup({
         ensure_installed = {
           "stylua",
