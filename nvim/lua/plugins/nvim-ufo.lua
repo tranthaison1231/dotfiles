@@ -34,6 +34,7 @@ return {
       },
     },
     config = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("ufo").setup({
         provider_selector = function()
           return { "treesitter", "indent" }
