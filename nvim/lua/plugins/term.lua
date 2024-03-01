@@ -7,7 +7,7 @@ return {
       require("toggleterm").setup({
         shade_terminals = false,
         on_open = function()
-          vim.opt.statuscolumn = "no"
+          vim.opt.statuscolumn = ""
 
           vim.cmd("startinsert!")
         end,
