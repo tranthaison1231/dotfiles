@@ -15,7 +15,7 @@ end)
 
 -- Settings
 config.font = wezterm.font("FiraCode Nerd Font", { weight = "Medium" })
-config.font_size = 13
+config.font_size = 14
 config.window_decorations = "RESIZE"
 config.status_update_interval = 1000
 config.enable_kitty_graphics = true
