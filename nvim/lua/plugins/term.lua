@@ -6,6 +6,7 @@ return {
     config = function()
       require("toggleterm").setup({
         shade_terminals = false,
+        auto_scroll = true,
         on_open = function()
           vim.opt.foldcolumn = "0"
           vim.opt.statuscolumn = ""
