@@ -48,6 +48,11 @@ return {
         lualine_y = {
           { "progress", separator = " ", padding = { left = 1, right = 1 } },
         },
+        lualine_z = {
+          function()
+            return " " .. os.date("%R")
+          end,
+        },
       },
       extensions = { "neo-tree", "lazy", "toggleterm", "trouble" },
     },
