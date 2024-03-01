@@ -49,7 +49,7 @@ return {
           { "progress", separator = " ", padding = { left = 1, right = 1 } },
         },
       },
-      extensions = { "neo-tree", "lazy", "toggleterm" },
+      extensions = { "neo-tree", "lazy", "toggleterm", "trouble" },
     },
   },
 }

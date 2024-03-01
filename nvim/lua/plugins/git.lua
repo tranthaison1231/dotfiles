@@ -13,6 +13,8 @@ return {
           vim.cmd(":DiffviewClose")
         else
           vim.cmd(":DiffviewOpen")
+          vim.opt.foldcolumn = "0"
+          vim.opt.statuscolumn = ""
         end
       end, {})
     end,
