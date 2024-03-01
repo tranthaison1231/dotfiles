@@ -53,6 +53,7 @@
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "toggleterm.nvim": { "branch": "main", "commit": "193786e0371e3286d3bc9aa0079da1cd41beaa62" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
+  "ts-error-translator.nvim": { "branch": "main", "commit": "1d24a38427fd2030c5f4e82156c87ab7d6d44814" },
   "vim-visual-multi": { "branch": "master", "commit": "fe1ec7e430013b83c8c2dee85ae496251b71e253" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
