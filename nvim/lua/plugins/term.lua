@@ -51,8 +51,8 @@ return {
         direction = "float",
         float_opts = {
           border = "curved",
-          width = 9999,
-          height = 9999,
+          width = vim.o.columns,
+          height = vim.o.lines,
         },
         start_in_insert = true,
         on_open = function(term)
