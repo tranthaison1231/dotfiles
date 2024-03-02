@@ -110,4 +110,10 @@ gpull () {
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+precmd() {
+  precmd() {
+    echo
+  }
+}
+
 eval "$(starship init zsh)"
