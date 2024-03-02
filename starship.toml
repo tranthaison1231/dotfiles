@@ -1,3 +1,5 @@
+add_newline = false
+
 [aws]
 style = "bold #ffb86c"
 
@@ -23,3 +25,4 @@ style = "bold #bd93f9"
 [username]
 format = "[$user]($style) on "
 style_user = "bold #8be9fd"
+
