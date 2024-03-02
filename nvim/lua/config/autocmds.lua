@@ -13,7 +13,6 @@ autocmd("LspAttach", {
     vim.keymap.set("n", "gD", "<cmd> Lspsaga peek_definition <CR>", opts("Declaration"))
     vim.keymap.set("n", "gd", "<cmd> Lspsaga goto_definition <CR>", opts("Definition"))
     vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc <CR>", opts("Hover"))
-    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc <CR>", opts("Hover"))
     vim.keymap.set("n", "gli", "<cmd> Lspsaga incoming_calls<CR>", opts("Incoming call"))
     vim.keymap.set("n", "glo", "<cmd> Lspsaga outgoing_calls<CR>", opts("Outgoing call"))
     vim.keymap.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts("Signature Help"))
