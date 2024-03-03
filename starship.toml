@@ -24,7 +24,6 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-symbol = " "
 style = "bold #FF79C6"
 
 [git_commit]
@@ -59,6 +58,7 @@ disabled = true
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
+symbol = "📀 "
 style = "bold dimmed #F8F8F2"
 disabled = false
 
