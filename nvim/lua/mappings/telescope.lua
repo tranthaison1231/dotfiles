@@ -11,9 +11,7 @@ end, { desc = "Search Spelling suggestions" })
 map("n", "<leader>fg", "<cmd>GrepInDirectory<CR>", { noremap = true, silent = true, desc = "Grep in Directory" })
 
 map("n", "<C-f>", function()
-  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    previewer = false,
-  }))
+  require("telescope.builtin").current_buffer_fuzzy_find()
 end, { desc = "Fuzzily search in current buffer]" })
 
 map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "Find recently opened files" })
