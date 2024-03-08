@@ -36,6 +36,7 @@ return {
           "prismals",
           "tsserver",
           "eslint",
+          "rust_analyzer",
           "lua_ls",
           "gopls",
         },
