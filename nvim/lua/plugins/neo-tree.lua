@@ -35,6 +35,11 @@ return {
     config = function()
       require("neo-tree").setup({
         filesystem = {
+          follow_current_file = true,
+          filtered_items = {
+            hide_dotfiles = false,
+            never_show = { ".git", "node_modules", ".cache" },
+          },
           window = {
             mappings = {
               ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
